@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 600px;
+  height: 600px;
+  background-color: #225675;
+  border: 20px solid #7dd9ff;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container button {
+  border: none;
+  outline: none;
+  /* 边框与默认样式清除 */
+}
+.container button.startBtn {
+  width: 200px;
+  height: 80px;
+  background-color: chartreuse;
+  display: block;
+  border-radius: 100px;
+}
+.container button.pauseBtn {
+  width: 50px;
+  height: 50px;
+  background-color: chocolate;
+  display: none;
+  border-radius: 50%;
+}

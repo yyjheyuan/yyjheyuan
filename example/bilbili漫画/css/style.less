@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 1200px;
+    padding: 0 15px;
+    section {
+      width: 100%;
+      .nrow {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        display: flex;
+        .title {
+          width: 30px;
+          margin-right: 14px;
+        }
+        .mangaClass {
+          ul {
+            list-style: none;
+            display: flex;
+            li {
+              //   width: 60px;
+              height: 30px;
+              text-align: center;
+              line-height: 30px;
+              padding: 0 10px;
+              margin: 0 2px;
+            }
+          }
+        }
+      }
+    }
+    .main {
+      //   width: 100%;
+      width: 1200px;
+      height: 100%;
+      display: flex;
+      margin-top: 50px;
+      //   justify-content: space-between;
+      flex-wrap: wrap;
+      align-content: baseline;
+      .card {
+        width: 180px;
+        height: 285px;
+        margin-right: 16px;
+        margin-bottom: 24px;
+        .mangaimg {
+          img {
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+          }
+        }
+        .mangatitle {
+          width: 100%;
+        //   text-decoration: ;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        }
+      }
+    }
+  }
+}

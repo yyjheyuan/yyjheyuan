@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="../swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../icomoon/style.css" />
+    <style>
+      .clientAccess .container .row .swiper {
+        width: 100%;
+      }
+
+      .clientAccess .container .row .swiper .swiper-slide {
+        /* width:33%; */
+        height: 300px;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <header class="nav-item">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"
+              ><img src="./img/logo1.png" alt=""
+            /></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
+            <ul class="nav navbar-nav navbar-right y-nav">
+              <!-- home -->
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Home <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <!-- <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li> -->
+                </ul>
+              </li>
+              <!-- about -->
+              <li>
+                <a href="#">About</a>
+              </li>
+              <!-- Service -->
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Service <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <!-- li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li> -->
+                  <!-- <li><a href="#">Separated link</a></li> -->
+                </ul>
+              </li>
+              <!-- Portfolio -->
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Portfolio <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <!-- li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li> -->
+                  <!-- <li><a href="#">Separated link</a></li> -->
+                </ul>
+              </li>
+              <!-- blogs -->
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Blogs <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <!--<li role="separator" class="divider"></li> -->
+                  <!-- <li><a href="#">Separated link</a></li> -->
+                </ul>
+              </li>
+              <!-- contact -->
+              <li>
+                <a href="#">contact</a>
+              </li>
+              <!-- contact -->
+              <li>
+                <a href="#">Technology</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+    </header>
+    <!-- 网站主题 -->
+    <section class="webTheme">
+      <div class="contact">
+        <div class="center">
+          <h1>Quality Is The Best Business Plan</h1>
+          <p>
+            Small river named Duden flows by their place and supplies it witnec
+            essary regelialia. It is a paradisematic country, in which Discover
+            more
+          </p>
+          <div class="wbtn">
+            <a href="">Discover more</a>
+          </div>
+          <div class="wImg">
+            <div class="imgx">
+              <img src="./img/layer1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 网页方案 -->
+    <section class="webSolution">
+      <div class="container">
+        <div class="title">
+          <h3>Do you want to generate more traffic website?</h3>
+          <h1>too We know the solution.</h1>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3 col solution">
+            <div class="card">
+              <img src="./img/f1.png" alt="" />
+              <div class="text">
+                <h4><a href="">Flexible Solutions</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore
+                </p>
+                <div class="btnsolu">
+                  <a href="">Discover more</a>
+                </div>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col contact">
+            <div class="card">
+              <img src="./img/f2.png" alt="" />
+              <div class="text">
+                <h4><a href="">Premium Contact</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore
+                </p>
+                <div class="btnsolu">
+                  <a href="">Discover more</a>
+                </div>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col idea">
+            <div class="card">
+              <img src="./img/f3.png" alt="" />
+              <div class="text">
+                <h4><a href="">Creative Idea</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore
+                </p>
+                <div class="btnsolu">
+                  <a href="">Discover more</a>
+                </div>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3 col ourTarget">
+            <div class="card">
+              <img src="./img/f4.png" alt="" />
+              <div class="text">
+                <h4><a href="">Our Target</a></h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore
+                </p>
+                <div class="btnsolu">
+                  <a href="">Discover more</a>
+                </div>
+              </div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 统计数据 -->
+    <section class="circleArea">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col circletext">
+            <div class="cirTxt">
+              <img src="./img/c1.png" alt="" />
+              <div class="title">
+                <h1>A Satisfied Customer is best for business</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim ad minim veniam, quis nostrud ectetur adipis.
+                </p>
+              </div>
+            </div>
+            <div class="row rowstats">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="cirimg">
+                  <img src="./img/下载.png" alt="" />
+                  <span>80%</span>
+                </div>
+                <div class="text">
+                  <h4>Html&Css</h4>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="cirimg">
+                  <img src="./img/下载.png" alt="" />
+                  <span>75%</span>
+                </div>
+                <div class="text">
+                  <h4>Web desig</h4>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="cirimg">
+                  <img src="./img/下载 (1).png" alt="" />
+                  <span>85%</span>
+                </div>
+                <div class="text">
+                  <h4>WordPress</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col circleimg">
+            <div class="circImg">
+              <img src="./img/c-witr.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- video -->
+    <section class="video_background">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 coltxt">
+            <div class="txts">
+              <div class="icons">
+                <span></span>
+              </div>
+              <h3>Our company ready to video!</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam,
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="video">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col">
+            <div class="video_box">
+              <div class="v_img">
+                <img src="./img/video-img.jpg" alt="" />
+              </div>
+              <div class="video_btn">
+                <i class="glyphicon glyphicon-play-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 服务介绍 -->
+    <section class="ourService">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 coltitle">
+            <div class="title">
+              <i class="glyphicon glyphicon-tower"></i>
+              <h2>Our Services</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam,
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s1.png" alt="" />
+              <div class="ctxt">
+                <h3>Marketplace People</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s2.png" alt="" />
+              <div class="ctxt">
+                <h3>Family Protections</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s3.png" alt="" />
+              <div class="ctxt">
+                <h3>Unique Digital Ideas</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s1.png" alt="" />
+              <div class="ctxt">
+                <h3>Marketplace People</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s2.png" alt="" />
+              <div class="ctxt">
+                <h3>Family Protections</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 col">
+            <div class="card">
+              <img src="./img/s3.png" alt="" />
+              <div class="ctxt">
+                <h3>Unique Digital Ideas</h3>
+                <p>
+                  We are going to run a solid cational paign campaign for the
+                  orphan children study here are many
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--团队成员 缺少内容同上 -->
+    <section class="ourMember">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 coltitle">
+            <div class="title">
+              <i class="glyphicon glyphicon-user"></i>
+              <div class="txt">
+                <h2>Meet our member</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam,
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <img src="./img/t1.jpg" alt="" />
+              <div class="shade"></div>
+              <div class="introduction">
+                <div class="pTxt">
+                  <h3><a href="">Arnika Sorkar</a></h3>
+                  <p>Web designer</p>
+                  <div class="icons">
+                    <span class="icon-facebook2"></span>
+                    <span class="icon-twitter"></span>
+                    <span class="icon-twitch"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <img src="./img/t2.jpg" alt="" />
+              <div class="shade"></div>
+              <div class="introduction">
+                <div class="pTxt">
+                  <h3><a href="">Arnika Sorkar</a></h3>
+                  <p>Web designer</p>
+                  <div class="icons">
+                    <span class="icon-facebook2"></span>
+                    <span class="icon-twitter"></span>
+                    <span class="icon-twitch"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <img src="./img/t3.jpg" alt="" />
+              <div class="shade"></div>
+              <div class="introduction">
+                <div class="pTxt">
+                  <h3><a href="">Arnika Sorkar</a></h3>
+                  <p>Web designer</p>
+                  <div class="icons">
+                    <span class="icon-facebook2"></span>
+                    <span class="icon-twitter"></span>
+                    <span class="icon-twitch"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <img src="./img/t4.jpg" alt="" />
+              <div class="shade"></div>
+              <div class="introduction">
+                <div class="pTxt">
+                  <h3><a href="">Arnika Sorkar</a></h3>
+                  <p>Web designer</p>
+                  <div class="icons">
+                    <span class="icon-facebook2"></span>
+                    <span class="icon-twitter"></span>
+                    <span class="icon-twitch"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 公司介绍 -->
+    <section class="companyIntroduce">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 ctitle">
+            <div class="title">
+              <i class="glyphicon glyphicon-knight"></i>
+              <div class="cTxt">
+                <h2>Best company in the world</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam,
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col">
+            <div class="coImg">
+              <img src="./img/s2-img.png" alt="" />
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col">
+            <div class="content">
+              <div class="card">
+                <i class="glyphicon glyphicon-ok"></i>
+                <div class="ctext">
+                  <h5>Protecting Investors Interests</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisic idoeiusmod
+                    tempor incididunt ut labore dolo.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <i class="glyphicon glyphicon-ok"></i>
+                <div class="ctext">
+                  <h5>Protecting Investors Interests</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisic idoeiusmod
+                    tempor incididunt ut labore dolo.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <i class="glyphicon glyphicon-ok"></i>
+                <div class="ctext">
+                  <h5>Protecting Investors Interests</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisic idoeiusmod
+                    tempor incididunt ut labore dolo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目 -->
+    <section class="companyProject">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col">
+            <div class="contact">
+              <h2>Interested! have any project?</h2>
+              <p>
+                My work systematically to integrate corporate responsibility in
+                our core business work systematically to integrate corporate
+                responsibility in our core business
+              </p>
+              <div class="btton">
+                <a href=""> Get Starte Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 客户评价(轮播，无按钮，可以滑动) -->
+    <!-- <p>
+                Lorem ipsum dolor sit amet, consectetur adipisic idoeiusmod
+                tempor incididunt ut labore dolo.
+              </p> -->
+    <!-- <div
+                  class="swiper-slide"
+                  style="background-color: cornflowerblue"
+                >
+                  <div class="card">
+                    <div class="star">
+                      <ul>
+                        <li>
+                          <div class="stars">
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="contact">
+                      <div class="text">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        </p>
+                      </div>
+                      <div class="thumb">
+                        <img src="./img/t1.png" alt="" />
+                      </div>
+                      <div class="introduce">
+                        <h5>Elwin Dawson <span>Manager</span></h5>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+    <!-- <div class="swiper-scrollbar"></div> -->
+    <!-- <section class="clientAccess">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col">
+            <div class="title">
+              <h2>What client say?</h2>
+            </div>
+          </div>
+          <div class="col-lg-12 col">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-color: chartreuse">
+                  <div class="card">
+                    <div class="star">
+                      <ul>
+                        <li>
+                          <div class="stars">
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="contact">
+                      <div class="text">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        </p>
+                      </div>
+                      <div class="thumb">
+                        <img src="./img/t1.png" alt="" />
+                      </div>
+                      <div class="introduce">
+                        <h5>Elwin Dawson <span>Manager</span></h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide" style="background-color: coral">
+                  <div class="card">
+                    <div class="star">
+                      <ul>
+                        <li>
+                          <div class="stars">
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="glyphicon glyphicon-star"></i>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="contact">
+                      <div class="text">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                        </p>
+                      </div>
+                      <div class="thumb">
+                        <img src="./img/t2.png" alt="" />
+                      </div>
+                      <div class="introduce">
+                        <h5>Elwin Dawson <span>Manager</span></h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-pagination y-dots"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- 底部 -->
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <div class="logo">
+                <img src="./img/logo2.png" alt="" />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consect adipisicing elit, sed do
+                eiusmod temporincididunt ut labore et dolore magna aliqua.
+              </p>
+              <ul class="icon">
+                <li><span class="icon-facebook"></span></li>
+                <li><span class="icon-twitter"></span></li>
+                <li><span class="icon-facebook"></span></li>
+                <li><span class="icon-facebook"></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <div class="title">
+                <h3>Company</h3>
+              </div>
+              <ul>
+                <li>Privacy Policy</li>
+                <li>Term of Service</li>
+                <li>Legal info</li>
+                <li>Knowledge Base</li>
+                <li>GDPR Update</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card">
+              <div class="title">
+                <h3>Address</h3>
+              </div>
+              <ul class="address">
+                <li>178 Alex Avenue. William Street.</li>
+                <li>
+                  <i class="glyphicon glyphicon-map-marker"></i> New York,
+                  NY-25435
+                </li>
+                <li>
+                  <i class="glyphicon glyphicon-earphone"></i>(088) 01790446363
+                </li>
+                <li>
+                  <i class="glyphicon glyphicon-adjust"></i>demo@example.com
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 col">
+            <div class="card newsletter">
+              <div class="title">
+                <h3>Newsletter</h3>
+              </div>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                />
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Submit</button>
+                </span>
+              </div>
+              <!-- /input-group -->
+              <p>Waiting for your message is not your important time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="../swiper/swiper-bundle.min.js"></script>
+  <script>
+    var num;
+    var swiperData = {
+      autoplay: true, //可选选项，自动滑动
+      loop: true, //循环模式选项
+      grabCursor: true, //设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状
+      observer: true, //开启动态检查器，监测swiper和slide的个数
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+        delay: 5000, //5秒切换一次
+      },
+      slidesPerView: 2,
+    };
+    // console.log(winWidth);
+    window.addEventListener("load", function () {
+      window.addEventListener("resize", function () {
+        num = window.innerWidth > 996 ? 2 : 1;
+      });
+    });
+
+    // var mySwiper = new Swiper(".swiper", swiperData);
+    // console.log(swiperData.slidesPerView);
+    //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
+    // new Swiper(".swiper");
+    // var mySwiper = document.querySelector(".swiper").swiper;
+    // mySwiper.slideNext();
+  </script>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- 初始化swiper插件 -->
+  <script>
+    $(window).scroll(function () {
+      if (scrollY > 100) {
+        $("nav").css("background-color", "#000000");
+      } else {
+        $("nav").css("background-color", "transparent");
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #bc95c6, #7dc4cc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1800px;
+}
+@keyframes menucards {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes menucards1 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateY(180deg);
+  }
+}
+@keyframes menucards2 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+  }
+}
+@keyframes menucards3 {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes scales {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+section.music {
+  width: 300px;
+  height: 500px;
+  background-color: rgba(240, 248, 255, 0.559);
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px 2px #a1a1a1;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 99;
+}
+section.music.active {
+  animation: menucards 1s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+section.music.inactive {
+  animation: menucards3 1s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+section.music .titleImg {
+  width: 220px;
+  height: 220px;
+  margin: 25px auto;
+  border-radius: 50%;
+  position: relative;
+}
+section.music .titleImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+section.music .titleImg img.active4 {
+  animation: scales 30s linear infinite;
+}
+section.music .titleImg .box {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.music .titleImg audio {
+  display: none;
+}
+section.music .buttons .musictime {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+section.music .buttons .musicName {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+section.music .buttons .musicName span:nth-child(1) {
+  width: 90%;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+section.music .buttons .progressBar {
+  width: 100%;
+  padding: 0 10px;
+}
+section.music .buttons .progressBar #progress {
+  width: 100%;
+}
+section.music .buttons .musicBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+section.music .buttons .musicBtn i {
+  font-size: 2em;
+  text-align: center;
+}
+section.music .buttons .btnOther {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+section.music .buttons .btnOther i {
+  font-size: 1.4em;
+  text-align: center;
+}
+section.music .buttons .btnOther i.active2,
+section.music .buttons .btnOther i.active3 {
+  color: red;
+}
+.menuCard {
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) translateY(-50%) translateZ(-2px) rotateY(180deg);
+  pointer-events: none;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  pointer-events: auto;
+}
+.menuCard.active {
+  animation: menucards2 1s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.menuCard.inactive {
+  animation: menucards1 1s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.menuCard .backMenu {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+}
+.menuCard .backMenu i {
+  display: block;
+  width: 30px;
+  height: 100%;
+}
+.menuCard ul {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  padding: 10px 10px 20px;
+  overflow-y: auto;
+}
+.menuCard ul li {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+.menuCard ul li.activeColo {
+  color: red;
+}
+.menuCard ul li h4 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menuCard ul li span {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=./music.css.map */

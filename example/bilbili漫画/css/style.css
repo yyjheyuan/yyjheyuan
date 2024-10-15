@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+#app {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+#app .container {
+  width: 1200px;
+  padding: 0 15px;
+}
+#app .container section {
+  width: 100%;
+}
+#app .container section .nrow {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+}
+#app .container section .nrow .title {
+  width: 30px;
+  margin-right: 14px;
+}
+#app .container section .nrow .mangaClass ul {
+  list-style: none;
+  display: flex;
+}
+#app .container section .nrow .mangaClass ul li {
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  padding: 0 10px;
+  margin: 0 2px;
+}
+#app .container .main {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  align-content: baseline;
+}
+#app .container .main .card {
+  width: 180px;
+  height: 285px;
+  margin-right: 16px;
+  margin-bottom: 24px;
+}
+#app .container .main .card .mangaimg img {
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+#app .container .main .card .mangatitle {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=./style.css.map */

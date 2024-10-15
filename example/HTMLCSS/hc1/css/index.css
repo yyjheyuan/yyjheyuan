@@ -1,0 +1,795 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+span {
+  color: #eec41e;
+}
+.container {
+  width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.header {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+.header .head-nav {
+  width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.header .head-nav img {
+  float: left;
+}
+.header .head-nav .navlist {
+  width: 771px;
+  float: left;
+}
+.header .head-nav .navlist .nav {
+  margin-left: 176px;
+}
+.header .head-nav .navlist .nav li {
+  font-size: 16px;
+  padding: 30px 15px;
+  float: left;
+  color: #222222;
+  transition: all 0.5s;
+}
+.header .head-nav .navlist .nav li:hover {
+  color: #eec41e;
+  transition: all 0.5s;
+}
+.header .head-nav .navlist .nav .y {
+  color: #eec41e;
+}
+.navimg {
+  width: 100%;
+  height: 950px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-image: url(../images/hero-area.jpg);
+  border-bottom-left-radius: 165px;
+}
+.navimg .container {
+  padding: 318px 0;
+}
+.navimg .container .row {
+  box-sizing: border-box;
+  width: 570px;
+  padding: 0 15px;
+  color: #ffffff;
+}
+.navimg .container .row h2 {
+  font-size: 54px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.navimg .container .row h2 span {
+  color: #eec41e;
+}
+.navimg .container .row p {
+  font-size: 18px;
+  margin-top: 30px;
+}
+.navimg .container .row > span {
+  width: 158px;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: #eec41e;
+  margin-top: 45px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.4;
+}
+.navimg .container .row > span:hover {
+  background-color: #ffffff;
+  color: #eec41e;
+  transition: all 0.4;
+}
+.about {
+  width: 100%;
+  padding: 130px 0;
+}
+.about .about-page {
+  width: 100%;
+  position: relative;
+}
+.about .about-page .about-img {
+  width: 48%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-top-right-radius: 220px;
+}
+.about .about-page .container {
+  position: relative;
+  z-index: -1;
+}
+.about .about-page .container .row {
+  width: 50%;
+  padding: 0 15px;
+  float: right;
+}
+.about .about-page .container .row .about-text .trow {
+  width: 100%;
+}
+.about .about-page .container .row .about-text .trow h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #28424D;
+}
+.about .about-page .container .row .about-text .trow p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #747188;
+}
+.about .about-page .container .row .about-text .trow a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 45px;
+  padding: 15px 20px;
+  background-color: #eec41e;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.6s;
+}
+.about .about-page .container .row .about-text .trow a:hover {
+  background-color: #ffe57c;
+  box-shadow: 0 0 5px 1px #d7d7d7;
+}
+.about .about-page .container .row .about-text .datarow {
+  width: 100%;
+  padding-top: 30px;
+  margin: 0 -15px;
+}
+.about .about-page .container .row .about-text .datarow .datacard {
+  width: 192px;
+  height: 142px;
+  text-align: center;
+  float: left;
+  margin: 30px 15px 0px 15px;
+  box-shadow: 0 0 25px 0 rgba(173, 206, 243, 0.25);
+}
+.about .about-page .container .row .about-text .datarow .datacard .count-wrap {
+  display: inline-block;
+  padding: 36px 0;
+}
+.about .about-page .container .row .about-text .datarow .datacard .count-wrap span {
+  color: #38424D;
+  font-size: 34px;
+  font-weight: 700;
+}
+.about .about-page .container .row .about-text .datarow .datacard .count-wrap p {
+  color: #747E88;
+  font-size: 18px;
+}
+.about .about-page .container .row .about-text .datarow .cardr {
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.about .about-page .container .row .about-text .datarow .cardl {
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.trippackges {
+  padding: 130px 0;
+  width: 100%;
+  background-color: #f9fafb;
+}
+.trippackges .container .triptitle {
+  width: 50%;
+  margin: 0 auto;
+}
+.trippackges .container .triptitle .caption {
+  width: 570px;
+  padding: 0 15px;
+}
+.trippackges .container .triptitle .caption .content1 {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 25px;
+}
+.trippackges .container .triptitle .caption .content1 h3 {
+  font-size: 44px;
+  font-weight: 600;
+}
+.trippackges .container .triptitle .caption .content1 p {
+  color: #747E88;
+  font-size: 1em;
+  margin-top: 20px;
+}
+.trippackges .container .row {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.trippackges .container .row .tripcard {
+  width: 380px;
+  padding: 0 15px;
+  float: left;
+}
+.trippackges .container .row .tripcard .cards {
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: 0 0 5px 0 #dbdbdb;
+}
+.trippackges .container .row .tripcard .cards img {
+  position: relative;
+  display: block;
+  border-style: none;
+}
+.trippackges .container .row .tripcard .cards .tripcontent {
+  width: 100%;
+  padding: 25px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+.trippackges .container .row .tripcard .cards .tripcontent .book {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  color: #38424D;
+  padding: 0 15px;
+  box-shadow: 0 0 5px 1px #747E88;
+  line-height: 35px;
+  border-radius: 20px;
+  position: absolute;
+  right: 25px;
+  top: -18px;
+  z-index: 10;
+  background-color: #fff;
+}
+.trippackges .container .row .tripcard .cards .tripcontent h4 {
+  font-size: 20px;
+  font-weight: 550;
+  color: #38424D;
+}
+.trippackges .container .row .tripcard .cards .tripcontent p {
+  font-size: 16px;
+  color: #747E88;
+  margin-top: 10px;
+}
+.trippackges .container .row .tripcard .cards .tripcontent .arrow {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  background-color: #eec41e;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+.trippackges .container .row .tripcard .cards:hover .tripcontent {
+  background-color: #eec41e;
+}
+.trippackges .container .row .tripcard .cards:hover .tripcontent .book {
+  background-color: #fff;
+}
+.trippackges .container .row .tripcard .cards:hover .tripcontent h4,
+.trippackges .container .row .tripcard .cards:hover .tripcontent p {
+  color: #fff;
+}
+.trippackges .container .row .tripcard .cards:hover .tripcontent .arrow {
+  color: #222222;
+  background-color: #fff;
+}
+.services {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 120px;
+  text-align: center;
+}
+.services .container .serheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.services .container .serheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.services .container .serheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.services .container .serheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.services .container .sermain {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.services .container .sermain .serrow {
+  width: 100%;
+}
+.services .container .sermain .serrow .sercard {
+  width: 285px;
+  padding: 0 15px;
+  float: left;
+}
+.services .container .sermain .serrow .sercard .sercard-text {
+  width: 255px;
+  padding: 25px 15px;
+  margin-top: 30px;
+  box-shadow: 0 0 25px 0 rgba(173, 206, 243, 0.25);
+}
+.services .container .sermain .serrow .sercard .sercard-text .sercard-content h4 {
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #38424D;
+}
+.services .container .sermain .serrow .sercard .sercard-text .sercard-content p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 15px;
+}
+.tripgallery {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 120px;
+  padding-bottom: 130px;
+  text-align: center;
+}
+.tripgallery .galleryheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.tripgallery .galleryheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.tripgallery .galleryheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.tripgallery .galleryheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.tripgallery .galmain {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.tripgallery .galmain .leftgal {
+  width: 475px;
+  float: left;
+  padding: 0 15px;
+}
+.tripgallery .galmain .leftgal img {
+  width: 100%;
+  display: block;
+  margin-top: 30px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.tripgallery .galmain .rightgal {
+  width: 665px;
+  float: left;
+  padding: 0 15px;
+}
+.tripgallery .galmain .rightgal .rimggal {
+  width: 317px;
+  padding: 0 15px;
+  float: left;
+}
+.tripgallery .galmain .rightgal .rimggal li {
+  margin-top: 35px;
+}
+.tripgallery .galmain .rightgal .rimggal .let .rb {
+  margin-top: 50px;
+}
+.tripgallery .galmain .rightgal .rimggal .rit .rt {
+  margin-top: 50px;
+}
+.tripgallery .galmain .rightgal .rimggal .rt img {
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.tripgallery .galmain .rightgal .rimggal .rb img {
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+.meetteam {
+  width: 100%;
+  background-color: #f9fafb;
+  padding-top: 120px;
+  padding-bottom: 130px;
+  text-align: center;
+}
+.meetteam .meetheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.meetteam .meetheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.meetteam .meetheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.meetteam .meetheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.meetteam .meetphoto {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.meetteam .meetphoto .meetrow {
+  width: 100%;
+}
+.meetteam .meetphoto .meetrow .meetcard {
+  width: 285px;
+  padding: 15px;
+  float: left;
+}
+.meetteam .meetphoto .meetrow .meetcard .meetconter {
+  margin-top: 30px;
+}
+.testimonial {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.testimonial .tmheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.testimonial .tmheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.testimonial .tmheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.testimonial .tmheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.testimonial .tmmain {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.testimonial .tmmain .tmcard {
+  width: 570px;
+  padding: 0 15px;
+  float: left;
+}
+.testimonial .tmmain .tmcard .tm-ca {
+  width: 100%;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 0 25px 0 rgba(173, 206, 243, 0.25);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.testimonial .tmmain .lists {
+  width: 100%;
+}
+.testimonial .tmmain .lists ul.lis {
+  width: 110px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.testimonial .tmmain .lists ul.lis li {
+  margin-right: 8px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #eec41e;
+  float: left;
+  box-shadow: 0 0 0 2px #eec41e;
+}
+.blogs {
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 120px;
+  padding-bottom: 130px;
+  text-align: center;
+}
+.blogs .blogheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.blogs .blogheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.blogs .blogheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.blogs .blogheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.blogs .blogmain {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.blogs .blogmain .blogleft {
+  width: 50%;
+  padding: 0 15px;
+  float: left;
+}
+.blogs .blogmain .blogleft .bloglcard {
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+  display: inline-block;
+  box-shadow: 0 0 5px 1px #747E88;
+}
+.blogs .blogmain .blogleft .bloglcard .bloglcard-text {
+  padding-top: 25px;
+}
+.blogs .blogmain .blogright {
+  width: 50%;
+  height: 100%;
+  padding: 0 15px;
+  float: left;
+}
+.blogs .blogmain .blogright .bcard {
+  width: 100%;
+  margin-top: 30px;
+  padding: 30px;
+  box-shadow: 0 0 5px 1px #747E88;
+}
+.blogs .blogmain .blogright .bcard img {
+  float: left;
+}
+.blogs .blogmain .blogright .bcard .btext {
+  width: 363px;
+  padding-left: 30px;
+  float: left;
+}
+.contact {
+  width: 100%;
+  background-color: #f9fafb;
+  padding-top: 120px;
+  padding-bottom: 130px;
+  text-align: center;
+}
+.contact .conheader {
+  width: 570px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.contact .conheader .title {
+  width: 100%;
+  padding-bottom: 25px;
+}
+.contact .conheader .title h3 {
+  font-size: 44px;
+  font-weight: 600;
+  color: #38424D;
+}
+.contact .conheader .title p {
+  font-size: 1em;
+  color: #747E88;
+  margin-top: 20px;
+}
+.contact form {
+  width: 1110px;
+}
+.contact form .conrow {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.contact form .conrow .inputcard {
+  width: 570px;
+  padding: 0 15px;
+  float: left;
+}
+.contact form .conrow .inputcard .conform {
+  width: 100%;
+  margin-top: 30px;
+}
+.contact form .conrow .inputcard .conform input {
+  width: 100%;
+  height: 60px;
+  padding: 0 25px;
+  border: 2px solid #dbdbdb;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #747e88;
+  font-size: 20px;
+}
+.contact form .conrow .inputcard-2 {
+  width: 1140px;
+  padding: 0 15px;
+  float: left;
+}
+.contact form .conrow .inputcard-2 .conform {
+  width: 100%;
+  margin-top: 30px;
+}
+.contact form .conrow .inputcard-2 .conform textarea {
+  width: 100%;
+  height: 230px;
+  padding: 15px 25px 0 25px;
+  color: #747e88;
+  font-size: 20px;
+  border-radius: 25px;
+  border: 2px solid #dbdbdb;
+  resize: none;
+}
+.contact form .conrow .buttoncard {
+  width: 1140px;
+  padding: 0 15px;
+  float: left;
+}
+.contact form .conrow .buttoncard .conform {
+  width: 100%;
+  margin-top: 30px;
+}
+.contact form .conrow .buttoncard .conform button {
+  margin: 0;
+  padding: 0 40px;
+  display: inline-block;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-color: #eec41e;
+  float: left;
+  text-transform: none;
+  border-radius: 50px;
+  border-style: none;
+}
+.contact form .conrow .buttoncard .conform button:hover {
+  background-color: #f7d551;
+}
+.footer {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 130px;
+  background-color: #38424d;
+  color: #ffffff;
+  text-align: center;
+}
+.footer .footrow {
+  width: 1140px;
+  margin: 0 -15px;
+}
+.footer .footrow .footx {
+  width: 380px;
+  padding: 0 15px;
+  float: left;
+}
+.footer .footrow .footx .fx {
+  width: 100%;
+  margin-top: 45px;
+}
+.footer .footrow .footx .fleftcard img {
+  float: left;
+  margin-bottom: 25px;
+}
+.footer .footrow .footx .fleftcard p {
+  text-align: left;
+  margin-top: 25px;
+}
+.footer .footrow .footx .fleftcard ul.st {
+  width: 100%;
+  margin: 0 auto;
+}
+.footer .footrow .footx .fleftcard ul.st li {
+  padding: 25px;
+  float: left;
+  display: inline-block;
+  margin-top: 35px;
+  background-color: #4977d9;
+  border-radius: 20px;
+}
+.footer .footrow .footx .fleftcard ul.st .ls {
+  margin-left: 15px;
+}
+.footer .footrow .footx .fleftcard ul.st .lb {
+  background-color: #55ACEE;
+}
+.footer .footrow .footx .fleftcard ul.st .r {
+  background-color: #a40404;
+}
+.footer .footrow .footx .fcentercard {
+  text-align: left;
+}
+.footer .footrow .footx .fcentercard .quicklink {
+  width: 50%;
+  float: left;
+}
+.footer .footrow .footx .fcentercard .support {
+  width: 50%;
+  float: left;
+}
+.footer .footrow .footx .fcentercard h4 {
+  font-size: 24px;
+}
+.footer .footrow .footx .fcentercard ul {
+  padding-top: 30px;
+}
+.footer .footrow .footx .fcentercard ul li {
+  margin-top: 15px;
+}
+.footer .footrow .footx .frightcard {
+  text-align: left;
+}
+.footer .footrow .footx .frightcard h4 {
+  font-size: 24px;
+}
+.footer .footrow .footx .frightcard p {
+  font-size: 1em;
+  margin-top: 45px;
+}
+.footer .footrow .footx .frightcard .footform {
+  margin-top: 30px;
+}
+.footer .footrow .footx .frightcard .footform form {
+  position: relative;
+}
+.footer .footrow .footx .frightcard .footform form input {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  padding: 0 25px;
+  border: 0;
+  font-size: 18px;
+  color: #38424d;
+}
+.footer .footrow .footx .frightcard .footform form button {
+  height: 40px;
+  width: 40px;
+  border: 0;
+  font-size: 28px;
+  color: #fff;
+  background-color: #eec41e;
+  border-radius: 5px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.footer p {
+  width: 100%;
+  margin-top: 90px;
+}
+/*# sourceMappingURL=./index.css.map */

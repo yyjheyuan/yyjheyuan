@@ -1,0 +1,1045 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+span {
+    color: #eec41e;
+}
+
+.container {
+    width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+// 导航栏设置
+.header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    // opacity: 0.6;
+
+    .head-nav {
+
+        width: 1140px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        img {
+            // width: 323px;
+            // display: block;
+            float: left;
+        }
+
+        .navlist {
+            width: 771px;
+            // line-height: 84px;
+            float: left;
+
+            .nav {
+                margin-left: 176px;
+
+                li {
+                    font-size: 16px;
+                    padding: 30px 15px;
+                    float: left;
+                    color: #222222;
+                    transition: all .5s;
+
+                    
+
+                    &:hover {
+                        color: #eec41e;
+                        transition: all .5s;
+                    }
+                }
+                .y {
+                    color: #eec41e;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+// end
+
+// 背景图设置
+.navimg {
+    width: 100%;
+    height: 950px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../images/hero-area.jpg);
+    border-bottom-left-radius: 165px;
+
+    .container {
+        padding: 318px 0;
+
+        .row {
+            box-sizing: border-box;
+            width: 570px;
+            padding: 0 15px;
+            color: #ffffff;
+
+            h2 {
+                font-size: 54px;
+                font-weight: bold;
+                margin-top: 15px;
+
+                span {
+                    color: #eec41e;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+
+            >span {
+                width: 158px;
+                box-sizing: border-box;
+                display: block;
+                // box-sizing: border-box;
+                padding: 10px 30px;
+                color: #fff;
+                background-color: #eec41e;
+                margin-top: 45px;
+                font-weight: bold;
+                border-radius: 5px;
+                transition: all .4;
+            }
+
+            &>span:hover {
+                background-color: #ffffff;
+                color: #eec41e;
+                transition: all .4;
+            }
+        }
+    }
+}
+
+// end
+
+// 关于旅行社的介绍
+.about {
+    width: 100%;
+    padding: 130px 0;
+
+    .about-page {
+        width: 100%;
+        // 可能会出现bug
+        // height: 739px;
+        position: relative;
+
+        .about-img {
+            width: 48%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            margin: 0;
+            // 将该绝对定位显示在其余所有定位的下方，不遮挡其余的定位
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            border-top-right-radius: 220px;
+        }
+
+        .container {
+            position: relative;
+            z-index: -1;
+
+            // 文字能在导航栏后面显示，与导航栏文字重叠
+            .row {
+                width: 50%;
+                padding: 0 15px;
+                float: right;
+
+                .about-text {
+
+                    .trow {
+                        width: 100%;
+                        // box-sizing: content-box;
+                        h3 {
+                            font-size: 44px;
+                            font-weight: 600;
+                            color: #28424D;
+                        }
+
+                        p {
+                            margin-top: 20px;
+                            font-size: 16px;
+                            color: #747188;
+                        }
+
+                        a {
+                            display:inline-block;
+                            color: #ffffff;
+                            text-decoration: none;
+                            margin-top: 45px;
+                            padding: 15px 20px;
+                            background-color: #eec41e;
+                            border-radius: 10px;
+                            font-weight: 700;
+                            transition: all 0.6s;
+                            // 细节添加
+                            // 没效果
+                            &:hover{
+                                background-color: #ffe57c;
+                                box-shadow: 0 0 5px 1px rgb(215, 215, 215);
+                            }
+
+                        }
+                        
+                    }
+
+                    .datarow {
+                        width: 100%;
+                        padding-top: 30px;
+                        margin: 0 -15px;
+
+                        .datacard {
+                            width: 192px;
+                            height: 142px;
+                            text-align: center;
+                            float: left;
+                            margin: 30px 15px 0px 15px;
+                            // background-color: bisque;
+                            box-shadow: 0 0 25px 0 rgba(173, 206, 243, .25);
+
+                            .count-wrap {
+                                // padding: 15px 30px;
+                                // line-height: 42px;
+                                // text-align: center;
+                                display: inline-block;
+                                padding: 36px 0;
+
+                                span {
+                                    color: #38424D;
+                                    font-size: 34px;
+                                    font-weight: 700;
+                                }
+
+                                p {
+                                    color: #747E88;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+
+                        .cardr {
+                            border-top-left-radius: 25px;
+                            border-bottom-right-radius: 25px;
+                        }
+
+                        .cardl {
+                            border-top-right-radius: 25px;
+                            border-bottom-left-radius: 25px;
+                        }
+                    }
+
+                }
+            }
+
+
+        }
+    }
+}
+
+// end
+
+// 旅行套餐推荐
+.trippackges {
+    padding: 130px 0;
+    width: 100%;
+    background-color: #f9fafb;
+    .container {
+        .triptitle {
+            width: 50%;
+            margin: 0 auto;
+
+            .caption {
+                width: 570px;
+                padding: 0 15px;
+
+                .content1 {
+                    text-align: center;
+                    width: 100%;
+                    padding-bottom: 25px;
+
+                    h3 {
+                        font-size: 44px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        color: #747E88;
+                        font-size: 1em;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+        .row {
+            width: 1140px;
+            margin: 0 -15px;
+            .tripcard {
+                width: 380px;
+                padding: 0 15px;
+                float: left;
+                .cards {
+                    width: 100%;
+                    margin-top: 30px;
+                    box-shadow: 0 0 5px 0 rgb(219, 219, 219);
+                    // position: relative;
+                    img {
+                        position: relative;
+                        display: block;
+                        border-style: none;
+                    }
+                    .tripcontent {
+                        width: 100%;
+                        padding: 25px;
+                        margin: 0;
+                        position: relative;
+                        z-index: 1;
+
+                        .book {
+                            font-size: 14px;
+                            font-weight: 500;
+                            text-align: center;
+                            display: inline-block;
+                            color: #38424D;
+                            padding: 0 15px;
+                            box-shadow: 0 0 5px 1px #747E88;
+                            line-height: 35px;
+                            border-radius: 20px;
+                            position: absolute;
+                            right: 25px;
+                            top: -18px;
+                            // z-index: 5;
+                            z-index: 10;
+                            background-color: #fff;
+                        }
+
+                        h4 {
+                            font-size: 20px;
+                            font-weight: 550;
+                            color: #38424D;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            color: #747E88;
+                            margin-top: 10px;
+                        }
+
+                        .arrow {
+                            width: 36px;
+                            height: 36px;
+                            display: inline-block;
+                            background-color: #eec41e;
+                            color: #ffffff;
+                            font-size: 16px;
+                            padding: 8px;
+                            text-align: center;
+                            border-radius: 50%;
+                            position: absolute;
+                            bottom: 25px;
+                            right: 25px;
+                        }
+                    }
+
+                    &:hover .tripcontent {
+                        background-color: #eec41e;
+
+                        .book {
+                            background-color: #fff;
+                        }
+
+                        h4,
+                        p {
+                            color: #fff;
+                        }
+
+                        .arrow {
+                            color: #222222;
+                            background-color: #fff;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+// end
+
+// 服务情况
+.services {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 120px;
+    text-align: center;
+
+    .container {
+        .serheader {
+            width: 570px;
+            padding: 0 15px;
+            margin: 0 auto;
+
+            .title {
+                width: 100%;
+                padding-bottom: 25px;
+
+                h3 {
+                    font-size: 44px;
+                    font-weight: 600;
+                    color: #38424D;
+                }
+
+                p {
+                    font-size: 1em;
+                    color: #747E88;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .sermain {
+            width: 1140px;
+            // height: 200px;
+            margin: 0 -15px;
+
+            .serrow {
+                width: 100%;
+
+                .sercard {
+                    width: 285px;
+                    padding: 0 15px;
+                    float: left;
+
+                    .sercard-text {
+                        width: 255px;
+                        padding: 25px 15px;
+                        margin-top: 30px;
+                        box-shadow: 0 0 25px 0 rgba(173, 206, 243, .25);
+
+                        // .sercard-icon {}
+
+                        .sercard-content {
+                            h4 {
+                                margin-top: 25px;
+                                font-size: 24px;
+                                font-weight: 500;
+                                color: #38424D;
+                            }
+
+                            p {
+                                font-size: 1em;
+                                color: #747E88;
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end
+
+// 旅游分享图库
+.tripgallery {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 120px;
+    padding-bottom: 130px;
+    text-align: center;
+
+    .galleryheader {
+        width: 570px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .title {
+            width: 100%;
+            padding-bottom: 25px;
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #38424D;
+            }
+
+            p {
+                font-size: 1em;
+                color: #747E88;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .galmain {
+        width: 1140px;
+        margin: 0 -15px;
+
+        .leftgal {
+            width: 475px;
+            float: left;
+            padding: 0 15px;
+
+            img {
+
+                width: 100%;
+                display: block;
+                margin-top: 30px;
+                border-top-left-radius: 25px;
+                border-bottom-right-radius: 25px;
+            }
+        }
+
+        .rightgal {
+            width: 665px;
+            float: left;
+            padding: 0 15px;
+
+            .rimggal {
+                width: 317px;
+                padding: 0 15px;
+                float: left;
+
+                li {
+                    margin-top: 35px;
+                }
+
+                .let {
+                    .rb {
+                        margin-top: 50px;
+                    }
+                }
+
+                .rit {
+                    .rt {
+                        margin-top: 50px;
+                    }
+                }
+
+                .rt img {
+                    width: 100%;
+                    border-top-left-radius: 25px;
+                    border-bottom-right-radius: 25px;
+                }
+
+                .rb img {
+                    width: 100%;
+                    border-top-left-radius: 25px;
+                    border-bottom-right-radius: 25px;
+                }
+            }
+        }
+    }
+}
+
+// end
+
+// 团队介绍
+.meetteam {
+    width: 100%;
+    background-color: #f9fafb;
+    padding-top: 120px;
+    padding-bottom: 130px;
+    text-align: center;
+
+    .meetheader {
+        width: 570px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .title {
+            width: 100%;
+            padding-bottom: 25px;
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #38424D;
+            }
+
+            p {
+                font-size: 1em;
+                color: #747E88;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .meetphoto {
+        width: 1140px;
+        // padding:0 15px;
+        margin: 0 -15px;
+
+        .meetrow {
+            width: 100%;
+
+            // padding: 0 -15px;
+            .meetcard {
+                width: 285px;
+                padding: 15px;
+                float: left;
+
+                .meetconter {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+}
+
+// end
+
+//推荐
+.testimonial {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    .tmheader {
+        width: 570px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .title {
+            width: 100%;
+            padding-bottom: 25px;
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #38424D;
+            }
+
+            p {
+                font-size: 1em;
+                color: #747E88;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .tmmain {
+        width: 1140px;
+        margin: 0 -15px;
+
+        .tmcard {
+            width: 570px;
+            padding: 0 15px;
+            float: left;
+
+            .tm-ca {
+                width: 100%;
+                padding: 30px;
+                margin: 30px 0;
+                box-shadow: 0 0 25px 0 rgba(173, 206, 243, .25);
+                border-top-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+        }
+
+        .lists {
+            width: 100%;
+
+            ul.lis {
+                width: 110px;
+                padding: 15px;
+                margin: 0 auto;
+
+                li {
+                    margin-right: 8px;
+                    padding: 5px;
+                    border-radius: 50%;
+                    background-color: #eec41e;
+                    float: left;
+                    box-shadow: 0 0 0 2px #eec41e;
+                }
+
+            }
+        }
+
+    }
+}
+
+// end
+
+// 旅游博客
+.blogs {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 120px;
+    padding-bottom: 130px;
+    text-align: center;
+
+    .blogheader {
+        width: 570px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .title {
+            width: 100%;
+            padding-bottom: 25px;
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #38424D;
+            }
+
+            p {
+                font-size: 1em;
+                color: #747E88;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .blogmain {
+        width: 1140px;
+        margin: 0 -15px;
+
+        .blogleft {
+            // width: 570px;
+            width: 50%;
+            padding: 0 15px;
+            float: left;
+
+            // background-color: #eec41e;
+            .bloglcard {
+                width: 100%;
+                padding: 30px;
+                margin-top: 30px;
+                display: inline-block;
+                box-shadow: 0 0 5px 1px #747E88;
+
+                .bloglcard-text {
+                    padding-top: 25px;
+                }
+            }
+        }
+
+        .blogright {
+            // width: 570px;
+            width: 50%;
+            height: 100%;
+            padding: 0 15px;
+            float: left;
+
+            .bcard {
+                width: 100%;
+                margin-top: 30px;
+                padding: 30px;
+                box-shadow: 0 0 5px 1px #747E88;
+
+                img {
+                    float: left;
+                }
+
+                .btext {
+                    width: 363px;
+                    padding-left: 30px;
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+// end
+// 用户反馈
+.contact {
+    width: 100%;
+    background-color: #f9fafb;
+    padding-top: 120px;
+    padding-bottom: 130px;
+    text-align: center;
+
+    .conheader {
+        width: 570px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        .title {
+            width: 100%;
+            padding-bottom: 25px;
+
+            h3 {
+                font-size: 44px;
+                font-weight: 600;
+                color: #38424D;
+            }
+
+            p {
+                font-size: 1em;
+                color: #747E88;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    form {
+        width: 1110px;
+
+        .conrow {
+            width: 1140px;
+            margin: 0 -15px;
+
+            .inputcard {
+                width: 570px;
+                padding: 0 15px;
+                float: left;
+
+                .conform {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    input {
+                        width: 100%;
+                        height: 60px;
+                        padding: 0 25px;
+                        border: 2px solid #dbdbdb;
+                        border-radius: 50px;
+                        background-color: #fff;
+                        color: #747e88;
+                        font-size: 20px;
+                    }
+
+                }
+            }
+
+            .inputcard-2 {
+                width: 1140px;
+                padding: 0 15px;
+                // text-align: left;
+                float: left;
+
+                .conform {
+                    width: 100%;
+                    margin-top: 30px;
+
+                    textarea {
+                        width: 100%;
+                        height: 230px;
+                        padding: 15px 25px 0 25px;
+                        color: #747e88;
+                        font-size: 20px;
+                        border-radius: 25px;
+                        border: 2px solid #dbdbdb;
+                        // 去除文本框可拖动的效果
+                        resize: none;
+                    }
+                }
+
+            }
+
+            .buttoncard {
+                width: 1140px;
+                padding: 0 15px;
+                float: left;
+
+                .conform {
+                    width: 100%;
+                    margin-top: 30px;
+
+
+                    button {
+                        margin: 0;
+                        padding: 0 40px;
+                        display: inline-block;
+                        text-align: center;
+                        font-size: 1em;
+                        font-weight: 600;
+                        height: 50px;
+                        line-height: 50px;
+                        color: #fff;
+                        background-color: #eec41e;
+                        float: left;
+                        text-transform: none;
+                        border-radius: 50px;
+                        // 去除按钮边框线
+                        border-style: none;
+
+                        &:hover {
+                            background-color: #f7d551;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// end
+
+// 页脚
+.footer {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 130px;
+    background-color: #38424d;
+    color: #ffffff;
+    // margin: 0 auto;
+    text-align: center;
+
+    .footrow {
+        width: 1140px;
+        margin: 0 -15px;
+
+        .footx {
+            width: 380px;
+            padding: 0 15px;
+            float: left;
+
+            .fx {
+                width: 100%;
+                margin-top: 45px;
+            }
+
+            .fleftcard {
+                img {
+                    float: left;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    text-align: left;
+                    margin-top: 25px;
+                }
+
+                ul.st {
+                    width: 100%;
+                    // padding: 15px;
+                    margin: 0 auto;
+
+                    li {
+                        padding: 25px;
+                        float: left;
+                        display: inline-block;
+                        margin-top: 35px;
+                        background-color: #4977d9;
+                        border-radius: 20px;
+
+                    }
+
+                    .ls {
+                        margin-left: 15px;
+
+                    }
+
+                    .lb {
+                        background-color: #55ACEE;
+                    }
+
+                    .r {
+                        background-color: rgb(164, 4, 4);
+                    }
+                }
+
+            }
+
+            .fcentercard {
+                text-align: left;
+
+                .quicklink {
+                    width: 50%;
+                    float: left;
+                }
+
+                .support {
+                    width: 50%;
+                    float: left;
+                }
+
+                h4 {
+                    font-size: 24px;
+                }
+
+                ul {
+                    padding-top: 30px;
+
+                    li {
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            .frightcard {
+                text-align: left;
+
+                h4 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 1em;
+                    margin-top: 45px;
+                }
+
+                .footform {
+                    margin-top: 30px;
+
+                    form {
+                        position: relative;
+
+                        input {
+                            width: 100%;
+                            height: 60px;
+                            border-radius: 5px;
+                            padding: 0 25px;
+                            border: 0;
+                            font-size: 18px;
+                            color: #38424d;
+                        }
+
+                        button {
+                            height: 40px;
+                            width: 40px;
+                            border: 0;
+                            font-size: 28px;
+                            color: #fff;
+                            background-color: #eec41e;
+                            border-radius: 5px;
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    p {
+        width: 100%;
+        margin-top: 90px;
+    }
+
+}
+
+// end

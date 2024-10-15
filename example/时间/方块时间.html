@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: rgb(49, 49, 49);
+      }
+      .stag {
+        width: 970px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+      .stag ul {
+        width: 60px;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+      }
+
+      .stag ul li {
+        width: 20px;
+        height: 20px;
+        list-style: none;
+        box-sizing: border-box;
+        border: 1px solid rgb(49, 49, 49);
+        /* box-shadow: 0 0 3px 0 rgb(255, 255, 255) inset; */
+        transition: all 0.2s;
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      .stag ul li.active {
+        background-color: rgb(255, 255, 255);
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="stag"></div>
+    <script>
+      // var ulDom = document.querySelector('ul');
+      // var liDom = ulDom.querySelectorAll('li');
+
+      // // console.log(Nums[2]);
+      // function showDom(n) {
+      //     for (var i = 0; i < Nums[n].length; i++) {
+      //         // console.log(Nums[n]);
+      //         for (var j = 0; j < Nums[n][i].length; j++) {
+      //             // console.log(Nums[i][j]);
+
+      //                 // console.log(Nums[i][j][k], i, j, k, j * 3 + k);
+      //                 if (Nums[n][i][j]) {
+      //                     // liDom[j * 3 + k].style.backgroundColor = 'red';
+      //                     liDom[i * 3 + j].className = 'active';
+      //                 } else {
+      //                     liDom[i * 3 + j].className= "";
+      //                 }
+
+      //         }
+      //     }
+      // }
+      // showDom(0);
+    </script>
+    <!--使用添加的方法，生成小方块 -->
+    <script src="./js/Num.js"></script>
+    <script>
+      var stagDom = document.querySelector(".stag");
+
+      for (var i = 0; i < 6; i++) {
+        var ulDom = document.createElement("ul");
+        for (var j = 0; j < 15; j++) {
+          var liDom = document.createElement("li");
+          ulDom.appendChild(liDom);
+        }
+        stagDom.appendChild(ulDom);
+      }
+      var ulDoms = document.querySelectorAll("ul");
+
+      function padTime(n) {
+        if (n < 10) {
+          return "0" + n;
+        } else {
+          return String(n);
+        }
+      }
+
+      function showDom(n, ulDom) {
+        for (var i = 0; i < Nums[n].length; i++) {
+          for (var j = 0; j < Nums[n][i].length; j++) {
+            if (Nums[n][i][j]) {
+              ulDom.querySelectorAll("li")[i * 3 + j].className = "active";
+            } else {
+              ulDom.querySelectorAll("li")[i * 3 + j].className = "";
+            }
+            console.log(n, i, j, i * 3 + j);
+          }
+        }
+      }
+
+      function nowtime() {
+        var now = new Date();
+        var hh = padTime(now.getHours());
+        var mm = padTime(now.getMinutes());
+        var ss = padTime(now.getSeconds());
+
+        var nows = hh + mm + ss;
+        ulDoms.forEach(function (ele, i) {
+          showDom(nows[i], ele);
+        });
+      }
+      nowtime();
+      setInterval(nowtime, 1000);
+    </script>
+  </body>
+</html>

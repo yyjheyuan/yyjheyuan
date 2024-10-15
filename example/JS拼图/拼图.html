@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        width: 480px;
+        height: 480px;
+        box-shadow: 0px 0px 3px 3px red;
+        margin: 0 auto;
+      }
+      #app #row {
+        display: flex;
+      }
+      .item {
+        width: 120px;
+        height: 120px;
+        border: 2px solid #fff;
+        box-sizing: border-box;
+      }
+      .item img {
+        width: 116px;
+        height: 116px;
+        opacity: 0.8;
+      }
+      .item img:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="row_1" id="row">
+        <div class="item" id="col_11"><img src="./images/1.png" alt="" /></div>
+        <div class="item" id="col_12"><img src="./images/2.png" alt="" /></div>
+        <div class="item" id="col_13"><img src="./images/3.png" alt="" /></div>
+        <div class="item" id="col_14"><img src="./images/4.png" alt="" /></div>
+      </div>
+      <div class="row_2" id="row">
+        <div class="item" id="col_21"><img src="./images/5.png" alt="" /></div>
+        <div class="item" id="col_22"><img src="./images/6.png" alt="" /></div>
+        <div class="item" id="col_23"><img src="./images/7.png" alt="" /></div>
+        <div class="item" id="col_24"><img src="./images/8.png" alt="" /></div>
+      </div>
+      <div class="row_3" id="row">
+        <div class="item" id="col_31"><img src="./images/9.png" alt="" /></div>
+        <div class="item" id="col_32"><img src="./images/10.png" alt="" /></div>
+        <div class="item" id="col_33"><img src="./images/11.png" alt="" /></div>
+        <div class="item" id="col_34"><img src="./images/12.png" alt="" /></div>
+      </div>
+      <div class="row_4" id="row">
+        <div class="item" id="col_41"><img src="./images/13.png" alt="" /></div>
+        <div class="item" id="col_42"><img src="./images/14.png" alt="" /></div>
+        <div class="item" id="col_43"><img src="./images/15.png" alt="" /></div>
+        <div class="item" id="col_44"><img src="./images/16.png" alt="" /></div>
+      </div>
+    </div>
+
+    <script>
+      function Game(appDom) {
+        this.app = appDom;
+        this.arr = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16".split(",");
+        this.row = 4;
+        this.col = 4;
+      }
+      Game.prototype.randomIndex = function (length) {
+        return Math.floor(Math.random() * length);
+      };
+
+      Game.prototype.random = function () {
+        // 随机打乱图片
+        var str = "";
+        // var ind = 1
+        for (var i = 1; i <= this.row; i++) {
+          str += '<div class="row_' + i + '" id="row">';
+          for (var j = 1; j <= this.col; j++) {
+            var index = this.randomIndex(this.arr.length);
+            var ind = this.arr.splice(index, 1);
+            if (ind == 16) {
+              str +=
+                '<div class="item" id="col_' +
+                i +
+                "_" +
+                j +
+                '"><img data-index=' +
+                ind +
+                ' class="empty" src="./images/' +
+                ind +
+                '.png" alt=""></div>';
+            } else {
+              str +=
+                '<div class="item" id="col_' +
+                i +
+                "_" +
+                j +
+                '"><img  data-index=' +
+                ind +
+                '  src="./images/' +
+                ind +
+                '.png" alt=""></div>';
+            }
+            // ind++
+          }
+          str += " </div>";
+        }
+        this.app.innerHTML = str;
+      };
+
+      Game.prototype.addClick = function () {
+        var _this = this;
+        this.app.onclick = function (event) {
+          // console.log(event);
+          // console.log(event.target.nodeName);
+          if (event.target.nodeName == "IMG") {
+            // console.log(event.target.parentElement.id.split("_")[1]);
+            var targetRow = Number(event.target.parentElement.id.split("_")[1]);
+            var targetCol = Number(event.target.parentElement.id.split("_")[2]);
+            var emptyDom = document.querySelector(".empty");
+            var emptyRow = Number(emptyDom.parentElement.id.split("_")[1]);
+            var emptyCol = Number(emptyDom.parentElement.id.split("_")[2]);
+
+            // console.log(targetRow, targetCol);
+            // console.log(emptyRow, emptyCol);
+
+            if (targetRow == emptyRow) {
+              if (targetCol + 1 == emptyCol || targetCol - 1 == emptyCol) {
+                // console.log(_this,this);
+                _this.changeImg(event.target, emptyDom);
+              }
+            }
+
+            if (targetCol == emptyCol) {
+              if (targetRow + 1 == emptyRow || targetRow - 1 == emptyRow) {
+                // console.log(_this,this);
+                _this.changeImg(event.target, emptyDom);
+              }
+            }
+          }
+        };
+      };
+
+      Game.prototype.changeImg = function (target, empty) {
+        // console.log(target,empty);
+
+        var c = target.src;
+        target.src = empty.src;
+        empty.src = c;
+
+        target.className = "empty";
+        empty.className = "";
+
+        var number = target.getAttribute("data-index");
+        target.setAttribute("data-index", empty.getAttribute("data-index"));
+        empty.setAttribute("data-index", number);
+        this.isOver();
+      };
+
+      Game.prototype.isOver = function () {
+        var imgs = document.querySelectorAll("img");
+        // console.log(imgs);
+        var imgStr = "";
+        for (var i = 0; i < imgs.length; i++) {
+          imgStr += imgs[i].getAttribute("data-index") + ",";
+        }
+        if (imgStr == "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16") {
+          alert("游戏过关");
+        }
+      };
+
+      Game.prototype.init = function () {
+        this.random();
+        this.addClick();
+      };
+
+      var appDom = document.querySelector("#app");
+      var game = new Game(appDom);
+      game.init();
+    </script>
+  </body>
+</html>

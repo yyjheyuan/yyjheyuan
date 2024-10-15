@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
+    <style>
+      .stage {
+        margin: 50px auto 0;
+        width: 400px;
+        /* height: 100%; */
+        background-color: bisque;
+        position: relative;
+      }
+      .stage img {
+        width: 400px;
+        /* height: 100%; */
+        display: block;
+      }
+      .stage .thumb {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        background-image: url(./captch.jpg);
+        background-position: -200px -10px;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 3px 1px #ccc;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        z-index: 9;
+      }
+      .stage .empty {
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        position: absolute;
+        top: 10px;
+        left: 200px;
+        z-index: 8;
+      }
+      .slider {
+        width: 400px;
+        height: 30px;
+        background-color: #ccc;
+        position: relative;
+        margin: 0 auto;
+      }
+      .slider input {
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        opacity: 0;
+      }
+      .slider .slide {
+        width: 30px;
+        height: 30px;
+        background-color: chartreuse;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <img src="./captch.jpg" alt="" srcset="" />
+      <div class="thumb"></div>
+      <div class="empty"></div>
+    </div>
+    <div class="slider">
+      <input type="range" name="" id="" />
+      <div class="slide"></div>
+    </div>
+    <script>
+      $(function () {
+        var wth = $(".stage").width();
+        var h = $(".stage").height();
+        // console.log($("img").height());
+        console.log(wth, h);
+        var x = Math.round(
+          Math.random() * (wth / 2 - $(".thumb").width()) + wth / 2
+        );
+        var y = Math.round(Math.random() * (h - $(".thumb").height()));
+        console.log(x, y);
+
+        $(".slide").css({ left: wth - x - 30 + "px" });
+        $(".empty").css({ top: y + "px", left: x + "px" });
+        $(".thumb").css({
+          top: y + "px",
+          left: wth - x - 30 + "px",
+          backgroundPosition: -x + "px" + " " + -y + "px",
+        });
+        $(".slider input").val(wth - x - 30);
+        console.log($(".slider input").val());
+        $(".slider input")
+          .attr({ min: 0, max: wth - $(".thumb").width() })
+          .end()
+          .bind("input", function () {
+            $(".thumb").css({
+              left: $(".slider input").val() + "px",
+            });
+            $(".slide").css({ left: $(".slider input").val() + "px" });
+          })
+          .change(function (event) {
+            // console.log(event);
+            if (Math.abs($("input").val() - x) <= 3) {
+              alert("验证成功");
+              console.log(Math.abs($("input").val() - x));
+            } else {
+              console.log(Math.abs($("input").val() - x));
+              $(".thumb")
+                .add(".slide")
+                .animate({ left: wth - x - 30 + "px" });
+              $(".slider input").val(wth - x - 30);
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

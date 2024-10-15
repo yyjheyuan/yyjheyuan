@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh" style="font-size: calc(100vw / 375)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yyj</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 100vh;
+        /* background: linear-gradient(135deg, #ff9cf8e0, rgba(119, 136, 219, 0.879)); */
+        background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+          radial-gradient(
+            91% 146%,
+            rgba(255, 255, 255, 0.5) 47%,
+            rgba(0, 0, 0, 0.5) 100%
+          );
+        background-blend-mode: screen;
+      }
+      .background {
+        width: 100vw;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* z-index: 999; */
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <canvas class="background"></canvas>
+    <section class="myinfo">
+      <div class="avatar">
+        <div class="avatarbgimg"></div>
+      </div>
+      <div class="info_main">
+        <div class="myname">
+          <h3>袁裕瑾</h3>
+          <p>前端开发工程师</p>
+          <span>
+            <i>
+              <img src="./image/wx.svg" alt="" srcset="" />
+            </i>
+            <i>
+              <img src="./image/twttie.svg" alt="" srcset="" />
+            </i>
+            <i>
+              <img
+                title="191*****496"
+                src="./image/phone.svg"
+                alt=""
+                srcset=""
+              />
+            </i>
+            <i>
+              <img
+                title="yyj020623@163.com"
+                src="./image/email.svg"
+                alt=""
+                srcset=""
+              />
+            </i>
+          </span>
+        </div>
+        <!-- 联系方式 -->
+        <div class="bgcolor"></div>
+      </div>
+    </section>
+    <main>
+      <!-- 头部、主要信息。 -->
+      <section class="infodetail">
+        <div class="title">
+          <h2>个人简介</h2>
+        </div>
+        <div class="content">
+          <div class="rowmain">
+            <p><span>性别</span><span class="maintext">男</span></p>
+            <p><span>年龄</span><span class="maintext">21岁</span></p>
+            <p><span>学校</span><span class="maintext">广州商学院</span></p>
+            <p>
+              <span>邮箱</span><span class="maintext">yyj020623@163.com</span>
+            </p>
+            <p>
+              <span>联系方式</span><span class="maintext">191*****496</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- 个人作品 -->
+      <section class="personalworks">
+        <h2>个人作品</h2>
+        <!-- html部分 -->
+        <div class="htmlmain">
+          <div class="title">
+            <h3>Html</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/HTMLCSS/hc1/index.html">
+                <div class="bgimg htmlbgimg"></div>
+                HTML页面</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/examination/apexindex.html">
+                <div class="bgimg html2bgimg"></div>
+                HTML2页面</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- JS内容 -->
+        <div class="jsmain">
+          <div class="title">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/贪吃蛇/贪吃蛇.html">
+                <div class="bgimg js1bgimg"></div>
+                贪吃蛇</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/手风琴/accordion.html">
+                <div class="bgimg js2bgimg"></div>
+                手风琴</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/y3D视差效果/css3Dcard.html">
+                <div class="bgimg js3bgimg"></div>
+                3D视差</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/响应式卡片滑块/cardtest.html">
+                <div class="bgimg js4bgimg"></div>
+                响应式卡片</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/抽奖/九宫格抽奖.html">
+                <div class="bgimg js5bgimg"></div>
+                九宫格抽奖</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/时间/方块时间.html">
+                <div class="bgimg js6bgimg"></div>
+                方块时钟</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Jquery内容 -->
+        <div class="jquerymain">
+          <div class="title">
+            <h3>Jquery</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/音乐播放器/music.html">
+                <div class="bgimg musicbgimg"></div>
+                音乐播放器</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/图片验证/图片验证.html">
+                <div class="bgimg yanzhengbgimg"></div>
+                图片验证</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Bootstrap 内容 -->
+        <div class="bootstrapmain">
+          <div class="title">
+            <h3>Bootstrap内容</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/bootstarp页面/养生网页/index.html">
+                <div class="bgimg bootstrap1bgimg"></div>
+                养生页面</a
+              >
+            </div>
+            <div class="item">
+              <a href="./example/bootstarp页面/投资网站/index.html">
+                <div class="bgimg bootstrap2bgimg"></div>
+                投资页面</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Echarts 内容 -->
+        <div class="echartsmain">
+          <div class="title">
+            <h3>Echarts</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/Echarts/index.html">
+                <div class="bgimg echartsbgimg"></div>
+                echarts
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 项目视频 -->
+        <div class="videomain">
+          <div class="title">
+            <h3>项目介绍</h3>
+          </div>
+          <div class="rowmain">
+            <div class="item">
+              <a href="./example/项目介绍/vue2project.html">
+                <div class="bgimg video1bgimg"></div>
+                Vue2
+              </a>
+            </div>
+            <div class="item">
+              <a href="./example/项目介绍/vue3project.html">
+                <div class="bgimg video2bgimg"></div>
+                Vue3
+              </a>
+            </div>
+            <div class="item">
+              <a href="./example/项目介绍/uniappproject.html">
+                <div class="bgimg video3bgimg"></div>
+                uniapp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script>
+      window.onload = function () {
+        Particles.init({
+          // 选择canvas画布元素
+          selector: ".background",
+          // 设置最大粒子数
+          maxParticles: 100,
+          // 设置粒子的移动速度
+          speed: 1,
+          // 设置粒子颜色
+          color: "#8ACAFF",
+          // 开启点连线
+          connectParticles: true,
+          // 设置
+          minDistance: 140,
+          // 设置响应式配置项的调整
+          responsive: [
+            {
+              // 当浏览器窗口宽小于768像素大小采用以下配置
+              breakpoint: 768,
+              options: {
+                maxParticles: 200,
+                color: "#9400D3",
+                connectParticles: false,
+              },
+            },
+            {
+              // 当浏览器窗口宽小于425像素大小采用以下配置
+              breakpoint: 425,
+              options: {
+                maxParticles: 100,
+                connectParticles: true,
+              },
+            },
+            {
+              // 当浏览器窗口宽小于320像素大小采用以下配置
+              breakpoint: 320,
+              options: {
+                maxParticles: 0,
+              },
+            },
+          ],
+        });
+      };
+    </script>
+  </body>
+</html>

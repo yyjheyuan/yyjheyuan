@@ -1,0 +1,877 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page {
+  width: 100%;
+  position: relative;
+}
+.page .divup {
+  background-color: #1c7ad8;
+}
+.page .divup span {
+  padding: 30px;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  font-size: 30px;
+  color: #fff;
+  z-index: 99;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.page .container-top {
+  width: 100%;
+  font-size: 12px;
+  background-color: beige;
+}
+.page .container-top .container {
+  width: 95%;
+  background-color: beige;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.page .container-top .container .contect {
+  display: flex;
+}
+.page .container-top .container .contect li {
+  border-left: 1px solid black;
+  padding: 5px 15px;
+}
+.page .container-top .container .contect li:last-child {
+  border-right: 1px solid black;
+}
+.page .container-top .container .sign {
+  display: flex;
+}
+.page .container-top .container .sign li {
+  border-left: 1px solid black;
+  padding: 5px 30px;
+}
+.page .container-top .container .sign li:last-child {
+  border-right: 1px solid black;
+}
+.page .nav {
+  width: 100%;
+  background-color: #ffffff;
+  position: sticky;
+  top: -1px;
+  z-index: 999;
+}
+.page .nav .nav-meun {
+  width: 95%;
+  padding: 10px 0;
+  background-color: #ffffff;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page .nav .nav-meun h1 {
+  font-size: 38px;
+  font-weight: bold;
+}
+.page .nav .nav-meun h1 span {
+  font-size: 34px;
+  color: orange;
+}
+.page .nav .nav-meun .meun ul {
+  display: flex;
+}
+.page .nav .nav-meun .meun ul li {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0 20px;
+}
+.page .banner {
+  width: 100%;
+  margin-bottom: 48px;
+  position: relative;
+}
+.page .banner img {
+  width: 100%;
+}
+.page .banner .bannerrow {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+.page .banner .bannerrow .banner-main {
+  margin: 0 auto;
+}
+.page .banner .bannerrow .banner-main .text {
+  width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+.page .banner .bannerrow .banner-main .text h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #F8F9FA;
+}
+.page .banner .bannerrow .banner-main .text h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #F8F9FA;
+}
+.page .banner .bannerrow .banner-main .text ol {
+  display: flex;
+  font-size: 20px;
+  color: #F8F9FA;
+}
+.page .banner .bannerrow .banner-main .text ol li {
+  padding: 30px 20px;
+}
+.page .banner .bannerrow .banner-main .text ol li:first-child {
+  padding-left: 0;
+}
+.page .banner .bannerrow .banner-main .text a {
+  width: 160px;
+  display: inline-block;
+  color: #fff;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: orange;
+  transition: all 0.5s;
+}
+.page .banner .bannerrow .banner-main .text a:hover {
+  background-color: #ebd825;
+  transition: all 0.5s;
+}
+.page .textmain {
+  width: 1320px;
+  padding: 48px 12px;
+  margin: 0 auto;
+}
+.page .wrap {
+  width: 100%;
+  padding: 0 12px;
+}
+.page .row {
+  margin: -48px -24px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.page .rowhead {
+  margin: -48px -24px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.page .rowcontect {
+  margin: -48px -24px 0;
+}
+.page .aboutus .wrap .row .aboutleft {
+  width: 50%;
+  padding: 0 24px;
+  margin-top: 48px;
+  background-color: #F8F9FA;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext {
+  width: 100%;
+  padding: 48px 0 0 48px;
+  position: relative;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext .alts {
+  width: 200px;
+  height: 200px;
+  padding: 0 16px 16px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext .alts .altxt {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext .alts .altxt h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext .alts .altxt h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+.page .aboutus .wrap .row .aboutleft .aboutlftext .alts .altxt h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.page .aboutus .wrap .row .aboutright {
+  width: 50%;
+  padding: 0 24px;
+  margin-top: 48px;
+}
+.page .aboutus .wrap .row .aboutright .rgtext {
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .title {
+  padding-left: 24px;
+  margin-bottom: 48px;
+  border-left: 4.8px solid orange;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .title h6 {
+  color: #8D9297;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .title h1 {
+  color: #182333;
+  font-size: 40px;
+  font-weight: bold;
+}
+.page .aboutus .wrap .row .aboutright .rgtext p {
+  font-size: 1em;
+  color: #8D9297;
+  margin-bottom: 16px;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .aboutrgfoot {
+  width: 100%;
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 0.8px solid #e5e5e5;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .aboutrgfoot .argftxt {
+  width: 100%;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .aboutrgfoot .argftxt ul.rgtxt {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .aboutrgfoot .argftxt ul.rgtxt li {
+  display: flex;
+  justify-content: space-between;
+}
+.page .aboutus .wrap .row .aboutright .rgtext .aboutrgfoot .argftxt ul.rgtxt li h6 {
+  font-size: 1em;
+  font-weight: 800;
+}
+.page .directory {
+  width: 100%;
+  margin: 48px 0;
+  background-color: darkorchid;
+}
+.page .directory .dirrow {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .directory .dirrow .dircard {
+  flex: 0 0 auto;
+  width: 25%;
+}
+.page .directory .dirrow .dircard .dircordmain {
+  width: 100%;
+  position: relative;
+}
+.page .directory .dirrow .dircard .dircordmain img {
+  width: 100%;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  justify-content: center;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext h1 {
+  font-size: 120px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 8px;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext p {
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext a {
+  font-size: 1em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.page .directory .dirrow .dircard .dircordmain .facttext a:hover {
+  color: orange;
+}
+.page .cause .wrap .row .aboutleft {
+  width: 50%;
+  padding: 0 24px;
+  margin-top: 48px;
+  background-color: #F8F9FA;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext {
+  width: 100%;
+  padding: 48px 0 0 48px;
+  position: relative;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext .alts {
+  width: 200px;
+  height: 200px;
+  padding: 0 16px 16px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext .alts .altxt {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext .alts .altxt h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext .alts .altxt h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+.page .cause .wrap .row .aboutleft .aboutlftext .alts .altxt h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.page .cause .wrap .row .aboutright {
+  width: 50%;
+  padding: 0 24px 0 0;
+  margin-top: 48px;
+}
+.page .cause .wrap .row .aboutright .rgtext {
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.page .cause .wrap .row .aboutright .rgtext .title {
+  padding-left: 24px;
+  margin-bottom: 48px;
+  border-left: 4.8px solid orange;
+}
+.page .cause .wrap .row .aboutright .rgtext .title h6 {
+  color: #8D9297;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.page .cause .wrap .row .aboutright .rgtext .title h1 {
+  color: #182333;
+  font-size: 40px;
+  font-weight: bold;
+}
+.page .cause .wrap .row .aboutright .rgtext p {
+  font-size: 1em;
+  color: #8D9297;
+  margin-bottom: 48px;
+}
+.page .cause .wrap .row .aboutright .rgtext .leftrow {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .cause .wrap .row .aboutright .rgtext .leftrow .lrowcard {
+  width: 50%;
+  padding: 0 12px;
+  margin-top: 48px;
+}
+.page .cause .wrap .row .aboutright .rgtext .leftrow .lrowcard .lctext {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+.page .cause .wrap .row .aboutright .rgtext .leftrow .lrowcard .lctext span {
+  font-size: 20px;
+  color: orange;
+}
+.page .cause .wrap .row .aboutright .rgtext .leftrow .lrowcard span {
+  color: #8D9297;
+}
+.page .head {
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.page .head .title {
+  padding-left: 24px;
+  margin-bottom: 48px;
+  border-left: 4.8px solid orange;
+}
+.page .head .title h6 {
+  color: #e4e7ec;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.page .head .title h1 {
+  color: #182333;
+  font-size: 40px;
+  font-weight: bold;
+}
+.page .services .wrap .rowhead .head {
+  width: 100%;
+  display: flex;
+  margin-bottom: 48px;
+  justify-content: space-between;
+}
+.page .services .wrap .rowhead .head .title {
+  width: 50%;
+  padding: 0 24px;
+  margin-bottom: 0;
+  margin-top: 48px;
+}
+.page .services .wrap .rowhead .head .btn {
+  width: 50%;
+  padding: 0 24px;
+  display: flex;
+  align-content: end;
+  justify-content: end;
+}
+.page .services .wrap .rowhead .head .btn a {
+  margin-top: 126px;
+  padding: 16px 48px;
+  background-color: orange;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.6s;
+}
+.page .services .wrap .rowhead .head .btn a:hover {
+  background-color: #ffbf49;
+  transition: all 0.6s;
+}
+.page .services .wrap .rowcontect .contect {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -24px -12px 0;
+}
+.page .services .wrap .rowcontect .contect .wrappercard {
+  width: 33.33%;
+  padding: 0 12px;
+  margin-top: 24px;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard {
+  background-color: #fff;
+  text-align: center;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard .servicestxt {
+  margin-top: -5px;
+  width: 100%;
+  background-color: #fff;
+  padding: 24px;
+  position: relative;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard .servicestxt .bgcolor {
+  width: 100%;
+  height: 0;
+  background-color: orange;
+  opacity: 0;
+  transition: all 2s;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard .servicestxt h5 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #182333;
+  position: relative;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard .servicestxt p {
+  font-size: 16px;
+  color: #8D9297;
+  margin-bottom: 16px;
+  position: relative;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard .servicestxt a {
+  font-size: 14px;
+  color: orange;
+  position: relative;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard:hover .servicestxt .bgcolor {
+  height: 100%;
+  opacity: 1;
+  transition: all 1s;
+  top: 0;
+  left: 0;
+}
+.page .services .wrap .rowcontect .contect .wrappercard .servicecard:hover .servicestxt a {
+  color: #fff;
+  transition: all 2s;
+}
+.page .appointment {
+  width: 100%;
+  padding: 48px 12px;
+  margin: 48px 0;
+  background-color: #1c7ad8;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/carousel-2.jpg) center center no-repeat;
+  background-size: cover;
+}
+.page .appointment .wrap .row .head {
+  width: 41.5%;
+  padding: 0 24px 0 0;
+  margin-top: 48px;
+}
+.page .appointment .wrap .row .head h1,
+.page .appointment .wrap .row .head h6,
+.page .appointment .wrap .row .head p {
+  color: #fff;
+}
+.page .appointment .wrap .row .head p {
+  margin-bottom: 8px;
+}
+.page .appointment .wrap .row .contect {
+  width: 58.5%;
+  padding: 0 24px;
+  margin-top: 48px;
+}
+.page .appointment .wrap .row .contect form {
+  width: 100%;
+}
+.page .appointment .wrap .row .contect form .formmain {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.page .appointment .wrap .row .contect form .formmain .inputcard {
+  width: 50%;
+  padding: 0 8px;
+  margin-top: 16px;
+}
+.page .appointment .wrap .row .contect form .formmain .inputcard .smallcard {
+  width: 100%;
+}
+.page .appointment .wrap .row .contect form .formmain .inputcard .smallcard input {
+  width: 100%;
+  padding: 26px 12px 10px;
+  background-color: #182333;
+  border: 0;
+  caret-color: #fff;
+}
+.page .appointment .wrap .row .contect form .formmain .inputcard .smallcard input:focus {
+  outline: 2px solid rgba(255, 179, 0, 0.8);
+}
+.page .appointment .wrap .row .contect form .formmain .textAreacard {
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 16px;
+}
+.page .appointment .wrap .row .contect form .formmain .textAreacard .smallcard textarea {
+  width: 100%;
+  height: 68px;
+  background-color: #182333;
+  border: 0;
+  resize: vertical;
+  caret-color: #fff;
+}
+.page .appointment .wrap .row .contect form .formmain .textAreacard .smallcard textarea:focus {
+  outline: 2px solid rgba(255, 179, 0, 0.8);
+}
+.page .appointment .wrap .row .contect form .formmain .btncard {
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 16px;
+}
+.page .appointment .wrap .row .contect form .formmain .btncard button {
+  width: 100%;
+  padding: 16px 12px;
+  font-weight: 600;
+  font-size: 20px;
+  border: 0;
+  color: #fff;
+  background-color: orange;
+}
+.page .teams .wrap .rowhead .head {
+  display: flex;
+  margin-bottom: 24px;
+}
+.page .teams .wrap .rowhead .head .title {
+  width: 100%;
+}
+.page .teams .wrap .rowhead .head .title h6 {
+  color: #8D9297;
+}
+.page .teams .wrap .rowhead .head .title h1 {
+  color: black;
+}
+.page .teams .wrap .rowhead .head p {
+  color: #8D9297;
+}
+.page .teams .wrap .rowcontect {
+  display: flex;
+  margin: -48px -24px 0;
+}
+.page .teams .wrap .rowcontect .cardmain {
+  width: 100%;
+  padding: 0 12px;
+  margin-top: 24px;
+}
+.page .teams .wrap .rowcontect .cardmain .cardtext {
+  position: relative;
+}
+.page .teams .wrap .rowcontect .cardmain .cardtext:hover .littlecard {
+  width: 100%;
+  transition: all 0.8s;
+}
+.page .teams .wrap .rowcontect .cardmain .cardtext .littlecard {
+  width: 75%;
+  height: 130px;
+  padding: 30px 0 0 15px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  transition: all 0.8s;
+}
+.page .teams .wrap .rowcontect .cardmain .cardtext .littlecard h5 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.page .teams .wrap .rowcontect .cardmain .cardtext .littlecard span {
+  font-size: 1em;
+  color: #8D9297;
+}
+.page .prove .wrap .row .leftrow {
+  width: 50%;
+  padding: 0 15px;
+  padding-left: 0;
+}
+.page .prove .wrap .row .leftrow .head p {
+  font-size: 1em;
+  color: #8D9297;
+  margin-bottom: 24px;
+}
+.page .prove .wrap .row .leftrow .head .footrow {
+  display: flex;
+}
+.page .prove .wrap .row .leftrow .head .footrow .leftmtext {
+  margin-right: 60px;
+}
+.page .prove .wrap .row .leftrow .head .footrow .leftmtext .lefttxt {
+  display: flex;
+  font-size: 40px;
+}
+.page .prove .wrap .row .leftrow .head .footrow .leftmtext .lefttxt span {
+  color: orange;
+}
+.page .prove .wrap .row .leftrow .head .footrow .leftmtext h5 {
+  font-size: 20px;
+}
+.page .prove .wrap .row .leftrow .head .footrow .rightmtext .rigtxt {
+  display: flex;
+  font-size: 40px;
+}
+.page .prove .wrap .row .leftrow .head .footrow .rightmtext .rigtxt span {
+  color: orange;
+}
+.page .prove .wrap .row .leftrow .head .footrow .rightmtext h5 {
+  font-size: 20px;
+}
+.page .prove .wrap .row .right {
+  width: 48%;
+}
+.page .prove .wrap .row .right .righttexts p {
+  margin: 20px 0;
+  color: #8D9297;
+}
+.page .prove .wrap .row .right .righttexts .x {
+  width: 80px;
+  height: 10px;
+  margin-left: 5px;
+  background-color: orange;
+  margin-bottom: 8px;
+}
+.page .prove .wrap .row .right .righttexts h5 {
+  font-size: 20px;
+}
+.page .prove .wrap .row .right .righttexts span {
+  color: #8D9297;
+}
+.page .prove .wrap .row .right .righttexts .btnrl {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+.page .prove .wrap .row .right .righttexts .btnrl .btnleft,
+.page .prove .wrap .row .right .righttexts .btnrl .btnright {
+  font-size: 20px;
+  padding: 20px 23px;
+  margin-right: 20px;
+  border: 2px solid orange;
+  border-radius: 50%;
+}
+.page .prove .wrap .row .right .righttexts .btnrl .btnleft:hover,
+.page .prove .wrap .row .right .righttexts .btnrl .btnright:hover {
+  background-color: orange;
+}
+.page .prove .wrap .row .right .righttexts .btnrl .btnleft:hover span,
+.page .prove .wrap .row .right .righttexts .btnrl .btnright:hover span {
+  color: #fff;
+}
+.page .foot {
+  width: 100%;
+  background-color: #182333;
+}
+.page .foot .textmain .footrow {
+  display: flex;
+}
+.page .foot .textmain .footrow .footcard {
+  width: 25%;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) h1 {
+  font-size: 40px;
+  color: #fff;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) h1 span {
+  color: orange;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #8D9297;
+  margin: 20px 0;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) .icon .sign {
+  display: flex;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) .icon .sign li {
+  border: 2px solid orange;
+  padding: 5px 5px;
+  margin-right: 8px;
+  color: orange;
+}
+.page .foot .textmain .footrow .footcard:nth-child(1) .icon .sign li:last-child {
+  border-right: 2px solid orange;
+}
+.page .foot .textmain .footrow .footcard:nth-child(2) h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #F8F9FA;
+}
+.page .foot .textmain .footrow .footcard:nth-child(2) .contect {
+  margin-top: 24px;
+  color: #8D9297;
+}
+.page .foot .textmain .footrow .footcard:nth-child(2) .contect li {
+  margin-bottom: 15px;
+}
+.page .foot .textmain .footrow .footcard:nth-child(2) .contect li span {
+  padding-right: 10px;
+}
+.page .foot .textmain .footrow .footcard:nth-child(3) h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #F8F9FA;
+}
+.page .foot .textmain .footrow .footcard:nth-child(3) .contect {
+  margin-top: 24px;
+  color: #8D9297;
+}
+.page .foot .textmain .footrow .footcard:nth-child(3) .contect li {
+  margin-bottom: 15px;
+}
+.page .foot .textmain .footrow .footcard:nth-child(3) .contect li span {
+  padding-right: 10px;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) {
+  padding-right: 20px;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #F8F9FA;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #8D9297;
+  margin: 20px 0;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) form {
+  position: relative;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) form input {
+  width: 100%;
+  height: 65px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  background-color: #182333;
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) form input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+}
+.page .foot .textmain .footrow .footcard:nth-child(4) form button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  color: #fff;
+  background-color: orange;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+}
+.page .foot .textmain .address {
+  width: 100%;
+  padding: 20px 0;
+  color: #fff;
+}
+.page .foot .textmain .address .addressrow {
+  display: flex;
+}
+.page .foot .textmain .address .addressrow .leftx {
+  width: 50%;
+  padding-top: 15px;
+}
+.page .foot .textmain .address .addressrow .rightx {
+  width: 50%;
+  text-align: right;
+  padding-top: 15px;
+}
+/*# sourceMappingURL=./apexindex.css.map */

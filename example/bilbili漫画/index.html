@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漫画分类</title>
+    <meta name="referrer" content="never" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <!-- <header>
+          <ul>
+            <li>题材</li>
+            <li v-for="(style, index) in styles">{{style.name}}</li>
+          </ul>
+          <ul>
+            <li>地区</li>
+            <li v-for="(area, index) in areas">{{area.name}}</li>
+          </ul>
+          <ul>
+            <li>进度</li>
+            <li v-for="(stat, index) in status">{{stat.name}}</li>
+          </ul>
+          <ul>
+            <li>收费</li>
+            <li v-for="(price, index) in prices">{{price.name}}</li>
+          </ul>
+          <ul>
+            <li>排序</li>
+            <li v-for="(order, index) in orders">{{order.name}}</li>
+          </ul>
+        </header> -->
+        <section>
+          <div class="mangaStyles nrow">
+            <div class="title">题材</div>
+            <div class="mangaClass">
+              <ul>
+                <li v-for="(style, index) in styles" @click="styleID">
+                  {{style.name}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mangaAreas nrow">
+            <div class="title">地区</div>
+            <div class="mangaClass">
+              <ul>
+                <!--  @click="areaID" -->
+                <li v-for="(area, index) in areas">{{area.name}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mangaStatus nrow">
+            <div class="title">进度</div>
+            <div class="mangaClass">
+              <ul>
+                <li v-for="(stat, index) in status">{{stat.name}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mangaPrices nrow">
+            <div class="title">收费</div>
+            <div class="mangaClass">
+              <ul>
+                <li v-for="(price, index) in prices">{{price.name}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mangaOrders nrow">
+            <div class="title">排序</div>
+            <div class="mangaClass">
+              <ul>
+                <li v-for="(order, index) in orders">{{order.name}}</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="main">
+          <div class="card" v-for="(manga, index) in mangas">
+            <div class="mangaimg">
+              <img v-bind:src="manga.vertical_cover" alt="" />
+            </div>
+            <div class="mangatxt">
+              <div class="mangatitle">{{manga.title}}</div>
+              <div class="mangastate" v-if="manga.is_finish">
+                [已完结] 共{{manga.last_ord}}话
+              </div>
+              <div class="mangastate" v-else="manga.is_finish">
+                更新至{{manga.last_ord}}话
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let myApp = new Vue({
+        el: "#app",
+        data: {
+          //   active: 0,
+          stylesID: -1,
+          areaId: -1,
+          isFinish: -1,
+          order: 0,
+          pageNum: 1,
+          isFree: -1,
+          areas: [{ id: "-1", name: "全部" }], //地区
+          orders: [], //排序
+          prices: [{ id: "-1", name: "全部" }], //价格
+          status: [{ id: "-1", name: "全部" }], //状态
+          styles: [{ id: "-1", name: "全部" }], //题材
+          mangas: [], //漫画
+        },
+        watch: {
+          stylesID: function (styleID) {
+            axios
+              .get("https://apic.netstart.cn/bcomic/ClassPage", {
+                params: {
+                  styleId: styleID,
+                  areaId: -1,
+                  isFinish: -1,
+                  order: 0,
+                  pageNum: 1,
+                  pageSize: 50,
+                  isFree: -1,
+                },
+              })
+              .then((result) => {
+                myApp.mangas = result.data.data;
+              });
+          },
+        },
+        methods: {
+          styleID(event) {
+            let styles = this.styles;
+            let arr = [];
+            for (let i = 0; i < styles.length; i++) {
+              arr.push(styles[i].name);
+            }
+            var n;
+            for (let i = 0; i < arr.length; i++) {
+              n = arr.indexOf(event.target.innerText);
+            }
+            this.stylesID = styles[n].id;
+          },
+        },
+      });
+      //
+      axios.get("https://apic.netstart.cn/bcomic/AllLabel").then((result) => {
+        myApp.areas = result.data.data.areas;
+        myApp.orders = result.data.data.orders;
+        myApp.prices = result.data.data.prices;
+        myApp.status = result.data.data.status;
+        myApp.styles = result.data.data.styles;
+        // console.log(myApp.status);
+      });
+      axios
+        .get("https://apic.netstart.cn/bcomic/ClassPage", {
+          params: {
+            styleId: myApp.stylesID,
+            areaId: myApp.areaId,
+            isFinish: -1,
+            order: 0,
+            pageNum: 1,
+            pageSize: 50,
+            isFree: -1,
+          },
+        })
+        .then((result) => {
+          myApp.mangas = result.data.data;
+          console.log(myApp.mangas);
+        });
+    </script>
+  </body>
+</html>

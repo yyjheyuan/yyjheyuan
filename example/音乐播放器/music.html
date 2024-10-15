@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/music.css" />
+    <link rel="stylesheet" href="./icon/style.css" />
+    <link rel="stylesheet" href="./icon/icomoon/style.css" />
+    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
+  </head>
+  <body>
+    <section class="music">
+      <div class="titleImg">
+        <img src="./images/123.jpg" alt="" />
+        <div class="box"></div>
+        <audio controls>
+          <source src="./music/doa - 英雄.mp3" type="audio/mpeg" />
+          <source src="./music/doa - 英雄.ogg" type="audio/ogg" />
+        </audio>
+      </div>
+      <div class="buttons">
+        <div class="musicName">
+          <span class="name">英雄</span>
+          <span class="singer">doa</span>
+        </div>
+        <div class="musictime">
+          <span class="currentTime">00:00</span>
+          <span class="totalTime">00:00</span>
+        </div>
+        <div class="progressBar">
+          <input type="range" name="progress" id="progress" value="0" />
+        </div>
+
+        <div class="musicBtn">
+          <i class="icon-backward2"></i>
+          <i class="icon-play3"></i>
+          <i class="icon-forward3"></i>
+        </div>
+
+        <div class="btnOther">
+          <i class="icon-loop loops"></i>
+          <i class="icon-shuffle randomi"></i>
+          <i class="icon-volume-medium"></i>
+          <i class="icon-menu menu"></i>
+        </div>
+      </div>
+    </section>
+    <div class="menuCard">
+      <div class="backMenu">
+        <i class="icon-arrow-left2 backMenuCard"></i>
+        <i class="icon-menu" title="创建歌单"></i>
+      </div>
+      <ul class="menuItems"></ul>
+    </div>
+  </body>
+  <script src="./js/music.js">
+    // 主要是歌曲的数据
+  </script>
+  <script>
+    var musiccard = document.querySelector(".music"); //首页
+    var audioDom = document.querySelector("audio"); //音频
+    var source = document.querySelectorAll("source"); //
+    var progress = document.querySelector("#progress");
+    var currentTime = document.querySelector(".currentTime");
+    var totalTime = document.querySelector(".totalTime");
+    var startbtn = document.querySelector(".icon-play3");
+    var img = document.querySelector("img");
+    //
+    var prev = document.querySelector(".icon-backward2");
+    var next = document.querySelector(".icon-forward3");
+    var nameDom = document.querySelector(".name");
+    var singer = document.querySelector(".singer");
+    var backMenuCard = document.querySelector(".backMenuCard");
+    var menuCard = document.querySelector(".menuCard");
+    var menuItems = document.querySelector(".menuItems");
+    /* audioDom.onload = function () {
+      console.log("audioDom.duration");
+    }; */
+    // console.log(img);
+    //
+    var musicURL = [];
+    music.forEach(function (item, index) {
+      //   console.log(item);
+      musicURL.push(item.src);
+    });
+    audioDom.ondurationchange = function () {
+      // console.log(audioDom.duration);
+      progress.max = audioDom.duration;
+    };
+    // 随机播放
+    var randomi = document.querySelector(".randomi");
+    var active2;
+    var loops = document.querySelector(".loops");
+    var active3;
+    //循环和随机按钮
+    randomi.addEventListener("click", function () {
+      randomi.classList.toggle("active2");
+      loops.classList.remove("active3");
+      var active2Dom = document.querySelector(".active2");
+
+      active2 = active2Dom;
+      // console.log(active2);
+      var active3Dom = document.querySelector(".active3");
+      active3 = active3Dom;
+    });
+
+    loops.addEventListener("click", function () {
+      loops.classList.toggle("active3");
+      randomi.classList.remove("active2");
+      var active3Dom = document.querySelector(".active3");
+      active3 = active3Dom;
+
+      var active2Dom = document.querySelector(".active2");
+      active2 = active2Dom;
+    });
+
+    function judgment(x1, func) {
+      if (x1 == func) {
+        func = randomIndex();
+        return judgment(x1, func);
+      } else {
+        return func;
+      }
+    }
+
+    // audioDom.ontimeupdate = function () {
+    //   // progress.value = audioDom.currentTime;
+    // };
+    // 实时获取audio的播放的时间，并每隔一秒更新一次到currentTime中,以分:秒的样式显示
+    audioDom.ontimeupdate = function () {
+      var currentTimeInSeconds = Math.floor(audioDom.currentTime);
+      var minutes = Math.floor(currentTimeInSeconds / 60);
+      var seconds = currentTimeInSeconds % 60;
+      progress.value = audioDom.currentTime;
+      currentTime.innerHTML = formatTime(minutes, seconds);
+    };
+    audioDom.onloadedmetadata = function () {
+      var totalTimeInSeconds = Math.floor(audioDom.duration);
+      var minutes = Math.floor(totalTimeInSeconds / 60);
+      var seconds = totalTimeInSeconds % 60;
+      totalTime.innerHTML = formatTime(minutes, seconds);
+    };
+    // console.log(currentTime,totalTime)
+    function formatTime(minutes, seconds) {
+      var formattedMinutes = String(minutes).padStart(2, "0");
+      var formattedSeconds = String(seconds).padStart(2, "0");
+      return formattedMinutes + ":" + formattedSeconds;
+    }
+    let changeProgress = true;
+    progress.oninput = function () {
+      changeProgress = true;
+      audioDom.currentTime = progress.value;
+    };
+    progress.onchange = function () {
+      // 拖动进度条，audioDom播放的时间也跟着改变
+      changeProgress = false;
+      audioDom.currentTime = progress.value;
+    };
+    // 开始按钮
+    startbtn.addEventListener("click", function () {
+      //   点击按钮，audioDom开始播放
+      // img.classList.remove("active4");
+      img.classList.add("active4");
+      playMusic();
+    });
+    // 上一首
+    prev.onclick = function () {
+      img.classList.remove("active4");
+      img.classList.add("active4");
+      var a = decodemusicURI();
+      //   console.log(a);
+      //判断a是否与musicURL中的某项相同相同则播放上一首，如果为第一首则播放最后一首
+      if (active2 == null) {
+        if (musicURL.indexOf(a) == 0) {
+          audioDom.src = music[music.length - 1].src;
+          nameDom.innerText = music[music.length - 1].name;
+          singer.innerText = music[music.length - 1].singer;
+          playMusic();
+        } else {
+          //   console.log(musicURL[musicURL.length - 1]);
+          audioDom.src = music[musicURL.indexOf(a) - 1].src;
+          nameDom.innerText = music[musicURL.indexOf(a) - 1].name;
+          singer.innerText = music[musicURL.indexOf(a) - 1].singer;
+          playMusic();
+        }
+      } else {
+        randomNextMusic();
+        playMusic();
+      }
+    };
+    // 解析URI编码
+    function decodemusicURI() {
+      var url = audioDom.currentSrc;
+      var decodedUrl = decodeURIComponent(url);
+      var path = decodedUrl.substring(decodedUrl.lastIndexOf("/") + 1);
+      var a = `./music/${path}`;
+      return a;
+    }
+    // console.log(decodemusicURI());
+    next.onclick = function () {
+      img.classList.remove("active4");
+      img.classList.add("active4");
+      var a = decodemusicURI();
+      // console.log(active2Dom);
+      // 当播放的为最后一首时，切换回第一首播放
+      img.classList.remove("active4");
+      img.classList.add("active4");
+      if (active2 == null) {
+        if (musicURL.indexOf(a) == musicURL.length - 1) {
+          audioDom.src = music[0].src;
+          nameDom.innerText = music[0].name;
+          singer.innerText = music[0].singer;
+          playMusic();
+        } else {
+          audioDom.src = music[musicURL.indexOf(a) + 1].src;
+          nameDom.innerText = music[musicURL.indexOf(a) + 1].name;
+          singer.innerText = music[musicURL.indexOf(a) + 1].singer;
+          playMusic();
+        }
+      } else {
+        randomNextMusic();
+        playMusic();
+      }
+    };
+
+    // 播放音乐
+    function playMusic() {
+      if (audioDom.paused) {
+        // 暂停
+        img.style.animationPlayState = "running";
+        // img.classList.add("active4");
+        startbtn.classList.remove("icon-play3");
+        startbtn.classList.add("icon-pause2");
+        audioDom.play();
+      } else {
+        // 播放
+        img.style.animationPlayState = "paused";
+        // img.classList.remove("active4");
+        startbtn.classList.remove("icon-pause2");
+        startbtn.classList.add("icon-play3");
+        audioDom.pause();
+      }
+    }
+    // 生成随机数
+    function randomIndex() {
+      return Math.floor(Math.random() * music.length);
+    }
+    // 点击随机播放后，随机下一首歌曲
+    function randomNextMusic() {
+      var nums = judgment(musicURL.indexOf(decodemusicURI()), randomIndex());
+      audioDom.src = music[nums].src;
+      nameDom.innerText = music[nums].name;
+      singer.innerText = music[nums].singer;
+    }
+    // 当此播放的歌曲播放结束时自动播放下一首
+    audioDom.addEventListener("ended", function () {
+      if (active3 == null) {
+        audioDom.loop = false;
+        next.click();
+      } else {
+        audioDom.loop = true;
+        playMusic();
+      }
+    });
+
+    // 翻转菜单
+    var menu = document.querySelector(".menu");
+    menu.addEventListener("click", function () {
+      musiccard.classList.add("active");
+      menuCard.classList.add("active");
+      musiccard.classList.remove("inactive");
+      menuCard.classList.remove("inactive");
+      liDoms[musicURL.indexOf(decodemusicURI())].classList.add("activeColo");
+    });
+    backMenuCard.onclick = function () {
+      musiccard.classList.add("inactive");
+      menuCard.classList.add("inactive");
+      musiccard.classList.remove("active");
+      menuCard.classList.remove("active");
+    };
+    // console.log(menuItems)
+    let ulDom = document.querySelector("ul.menuItems");
+    for (var i = 0; i < music.length; i++) {
+      var liDom = document.createElement("li");
+      liDom.index = i;
+      // console.log(liDom)
+      var h4 = document.createElement("h4");
+      var span = document.createElement("span");
+      h4.innerText = music[i].name;
+      span.innerText = music[i].singer;
+      liDom.appendChild(h4);
+      liDom.appendChild(span);
+      ulDom.appendChild(liDom);
+    }
+
+    var liDoms = document.querySelectorAll("ul.menuItems li");
+    // console.log(liDoms);
+    // liDoms[musicURL.indexOf(decodemusicURI())].classList.add("activeColo");
+    for (var i = 0; i < liDoms.length; i++) {
+      // 所有的li标签都清除activeColo，点击其中一个，给其添加activeColo
+      // liDoms[i].classList.remove("activeColo");
+      liDoms[i].onclick = function (event) {
+        // 给当前点击的li标签添加activeColo
+        this.classList.add("activeColo");
+        audioDom.src = music[this.index].src;
+        nameDom.innerText = music[this.index].name;
+        singer.innerText = music[this.index].singer;
+        playMusic();
+        // 给当前点击的li标签的兄弟li标签移除activeColo
+        for (var j = 0; j < liDoms.length; j++) {
+          if (liDoms[j] != this) {
+            liDoms[j].classList.remove("activeColo");
+          }
+        }
+      };
+    }
+  </script>
+</html>

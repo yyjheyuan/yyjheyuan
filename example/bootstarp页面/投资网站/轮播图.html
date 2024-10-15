@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .swiper {
+        /* width: 600px; */
+        height: 300px;
+        /* margin: 0 auto; */
+      }
+      .swiper .swiper-slide{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="yuans">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-color: chartreuse">
+                  slider1
+                </div>
+                <div class="swiper-slide" style="background-color: coral">
+                  slider2
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="background-color: cornflowerblue"
+                >
+                  slider3
+                </div>
+              </div>
+              <!-- <div class="swiper-scrollbar"></div> -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="../swiper/swiper-bundle.min.js"></script>
+
+  <!-- 初始化swiper插件 -->
+  <script>
+    var mySwiper = new Swiper(".swiper", {
+      autoplay: true, //可选选项，自动滑动
+      loop: true, //循环模式选项
+      observer: true, //开启动态检查器，监测swiper和slide的个数
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+        delay: 5000, //1秒切换一次
+      },
+      slidesPerView: 2,
+    });
+
+    //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
+    new Swiper(".swiper");
+    var mySwiper = document.querySelector(".swiper").swiper;
+    mySwiper.slideNext();
+  </script>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>

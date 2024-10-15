@@ -1,0 +1,199 @@
+* {
+  font-size: 6rem;
+  box-sizing: border-box;
+}
+.myinfo {
+  position: fixed;
+  width: 65rem;
+  height: 120rem;
+  top: 2rem;
+  left: 2rem;
+  background-color: rgba(88, 201, 205, 0.344);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.344);
+}
+.myinfo .avatar {
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myinfo .avatar .avatarbgimg {
+  width: 40rem;
+  height: 40rem;
+  background-color: #00ffaa;
+  border-radius: 50%;
+  background-image: url("../image/avatar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.myinfo .info_main .myname p {
+  padding-top: 5rem;
+  font-size: 5rem;
+}
+.myinfo .info_main .myname span {
+  display: block;
+  padding-top: 5rem;
+}
+.myinfo .info_main .myname span i {
+  margin-right: 2rem;
+}
+.myinfo .info_main .myname span i img {
+  width: 10rem;
+  height: 10rem;
+}
+.myinfo .info_main .bgcolor {
+  margin-top: 10rem;
+  width: 100%;
+  height: 20rem;
+  background-color: #f7f7f7;
+}
+main {
+  margin-top: 2rem;
+  width: 220rem;
+  /* width: 100%; */
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 5rem;
+  position: relative;
+  z-index: 999;
+  top: 2rem;
+  background-color: rgba(255, 235, 205, 0.621);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.203);
+}
+main .infodetail {
+  padding: 0rem 0 10rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+main .infodetail .title {
+  padding-bottom: 5rem;
+}
+main .infodetail .content .rowmain p span {
+  display: inline-block;
+  width: 50rem;
+  font-size: 4rem;
+}
+main .personalworks .rowmain {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .personalworks .rowmain .item {
+  margin-right: 10rem;
+  margin-bottom: 10rem;
+}
+main .personalworks .rowmain .item a {
+  text-decoration: none;
+  color: #000;
+}
+main .personalworks .rowmain .item a:hover .bgimg {
+  background-size: 150% !important;
+  transition: all 0.5s;
+}
+main .personalworks .rowmain .item a .bgimg {
+  width: 60rem;
+  height: 40rem;
+  background-color: chocolate;
+  transition: all 0.5s;
+}
+main .personalworks .htmlmain .rowmain .item a .htmlbgimg {
+  background-image: url(../image/anli/HTMLCSS.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+main .personalworks .htmlmain .rowmain .item a .html2bgimg {
+  background-image: url(../image/anli/Html2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+main .personalworks .jsmain .rowmain .item a .js1bgimg {
+  background-image: url(../image/anli/贪吃蛇.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jsmain .rowmain .item a .js2bgimg {
+  background-image: url(../image/anli/手风琴.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jsmain .rowmain .item a .js3bgimg {
+  background-image: url(../image/anli/3D视差.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jsmain .rowmain .item a .js4bgimg {
+  background-image: url(../image/anli/响应式卡片滑块.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jsmain .rowmain .item a .js5bgimg {
+  background-image: url(../image/anli/抽奖.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jsmain .rowmain .item a .js6bgimg {
+  background-image: url(../image/anli/方块时钟.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jquerymain .rowmain .item .musicbgimg {
+  background-image: url(../image/anli/音乐播放器.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .jquerymain .rowmain .item .yanzhengbgimg {
+  background-image: url(../image/anli/验证.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .bootstrapmain .rowmain .item a .bootstrap1bgimg {
+  background-image: url(../image/anli/bootstrap框架养生网站.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .bootstrapmain .rowmain .item a .bootstrap2bgimg {
+  background-image: url(../image/anli/bootstarp框架投资网站.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .echartsmain .rowmain .item a .echartsbgimg {
+  background-image: url(../image/anli/Echarts.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .videomain .rowmain .item a .video1bgimg {
+  background-image: url(../image/anli/vue2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .videomain .rowmain .item a .video2bgimg {
+  background-image: url(../image/anli/vue3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .personalworks .videomain .rowmain .item a .video3bgimg {
+  background-image: url(../image/anli/uniapp.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*# sourceMappingURL=./index.css.map */

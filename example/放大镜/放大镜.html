@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* align-content: center; */
+      }
+      .stag {
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        position: relative;
+      }
+      .stag .imgbox {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(5, 255, 255);
+      }
+      .stag .imgbox img {
+        width: 100%;
+        display: block;
+      }
+      .stag .smallshadow {
+        width: 150px;
+        height: 150px;
+        /* background-color: chartreuse; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        background-image: url(./img/move.png);
+      }
+      .bigimg {
+        width: 300px;
+        height: 300px;
+        background-color: chocolate;
+        background-image: url(./img/big1.jpg);
+        background-position: 0px 0;
+        background-repeat: no-repeat;
+        background-size: 200%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- <div class="btn"></div> -->
+      <div class="stag">
+        <div class="imgbox">
+          <img src="./img/big1.jpg" alt="" />
+        </div>
+        <div class="smallshadow"></div>
+      </div>
+      <div class="bigimg"></div>
+    </div>
+  </body>
+  <script>
+    var stagDom = document.querySelector(".stag");
+    var imgboxDom = document.querySelector(".imgbox");
+    var smallshadowDom = document.querySelector(".smallshadow");
+    var bigimgDom = document.querySelector(".bigimg");
+    // 获取鼠标移入事件，小盒子跟着鼠标的移动而移动
+    stagDom.onmousemove = function (event) {
+      // console.log(event, event.clientX, event.layerX);
+      // clientX,layerX,offsetX,pageX,screenX,x
+      //获取鼠标在图片盒子内部的距离的位置。 鼠标所在位置坐标（相对整个浏览器页面来说的） - 图片所在盒子到浏览器边缘的位置坐标
+      var mouseX = event.pageX - stagDom.offsetLeft;
+      var mouseY = event.pageY - stagDom.offsetTop;
+      console.log(mouseX, mouseY);
+
+      // 设置小盒子到图片边缘的位置
+      var smallshadowX = mouseX - smallshadowDom.offsetWidth / 2;
+      var smallshadowY = mouseY - smallshadowDom.offsetHeight / 2;
+      // 判断其是否超出这个图片所在盒子的宽高，是则令其为0或为图片盒子与小盒子剩余距离。
+      if (smallshadowX <= 0) {
+        smallshadowX = 0;
+      } else if (
+        smallshadowX >=
+        stagDom.offsetWidth - smallshadowDom.offsetWidth
+      ) {
+        smallshadowX = stagDom.offsetWidth - smallshadowDom.offsetWidth;
+      }
+      // smallshadowX = smallshadowX <= 0 ? 0 : smallshadowX;
+      // smallshadowX = smallshadowX >= 300 - 150 ? 300 - 150 : smallshadowX;
+
+      if (smallshadowY <= 0) {
+        smallshadowY = 0;
+      } else if (
+        smallshadowY >=
+        stagDom.offsetHeight - smallshadowDom.offsetHeight
+      ) {
+        smallshadowY = stagDom.offsetHeight - smallshadowDom.offsetHeight;
+      }
+      // smallshadowY = smallshadowY <= 0 ? 0 : smallshadowY;
+      // smallshadowY = smallshadowY >= 300 - 150 ? 300 - 150 : smallshadowY;
+
+      // 改变小盒子的位置。
+      smallshadowDom.style.left = smallshadowX + "px";
+      smallshadowDom.style.top = smallshadowY + "px";
+      smallshadowDom.style.opacity = 1;
+      // 改变背景图的位置。
+      bigimgDom.style.backgroundPositionX = smallshadowX * -2 + "px";
+      bigimgDom.style.backgroundPositionY = smallshadowY * -2 + "px";
+    };
+    stagDom.onmouseout = function () {
+      smallshadowDom.style.opacity = 0;
+    };
+  </script>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        width: 400px;
+        height: 400px;
+        background-color: cadetblue;
+        margin: 10px auto 0;
+        list-style: none;
+        border: 5px solid cadetblue;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul li {
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        background-color: cornsilk;
+        border: 5px solid cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <script>
+      var map = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+      ];
+      /* var map = [
+        [2, 2, 4, 0],
+        [8, 0, 0, 0],
+        [0, 0, 2, 0],
+        [2, 0, 0, 2],
+      ]; */
+      /* var map = [
+        [2, 2, 4, 2],
+        [8, 2, 4, 8],
+        [2, 2, 2, 4],
+        [2, 4, 4, 8],
+      ]; */
+      var liDoms = document.querySelectorAll("li");
+      function updateView() {
+        map.forEach(function (row, ri) {
+          row.forEach(function (cell, ci) {
+            liDoms[ri * 4 + ci].innerText = "";
+            liDoms[ri * 4 + ci].style.backgroundColor = "rgb(208, 208, 208)";
+            if (cell) {
+              liDoms[ri * 4 + ci].innerText = cell;
+              liDoms[ri * 4 + ci].style.backgroundColor =
+                "hsl(0deg 100% " +
+                (Math.floor((1 - Math.log2(cell) / 12) * 60) + 20) +
+                "%)";
+            }
+          });
+        });
+      }
+      //   将map在控制台显示出来
+      function showMap() {
+        var str = "%c";
+        map.forEach(function (row, ri) {
+          row.forEach(function (cell, ci) {
+            str += cell + " ";
+          });
+          str += "\n";
+        });
+        console.log(str, "color:red");
+      }
+      //   获取所有为 0 的位置
+      function getempty(map) {
+        var emptys = [];
+        map.forEach(function (row, ri) {
+          row.forEach(function (cell, ci) {
+            if (!cell) {
+              emptys.push(ri * 4 + ci);
+            }
+          });
+        });
+        return emptys;
+      }
+      //   console.log(getempty(map));
+      //   在一个位置插入随机的2或4
+      function insert(n, index) {
+        // index / 4==>行数 、index % 4 ==>列数
+        if (index) {
+          map[Math.floor(index / 4)][index % 4] = n;
+        } else {
+          // 当index不存在时打印game over
+          console.log("game over");
+        }
+      }
+      function randomNum() {
+        return 2 ** Math.ceil(Math.random() * 2);
+      }
+      function randomPosition(map) {
+        var empty = getempty(map);
+        if (empty.length) {
+          return empty[Math.floor(Math.random() * empty.length)];
+        } else {
+          return false;
+        }
+      }
+      insert(randomNum(), randomPosition(map));
+      insert(randomNum(), randomPosition(map));
+      updateView();
+      /* showMap();
+      insert(2, randomPosition(map));
+      showMap();
+        */
+      //   随机添加数值结束
+      //   上下左右操作
+      //   向左
+      function moveLeft() {
+        // 整理，将值0排到数值后面
+        // 深克隆一下 map
+        var clonedMap = window.structuredClone(map);
+        // 初次整理整个数组
+        clonedMap.forEach(function (row, ri) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < row.length; i++) {
+            if (row[i]) {
+              notEmpty.push(row[i]);
+            } else {
+              empty.push(row[i]);
+            }
+          }
+          clonedMap[ri] = notEmpty.concat(empty);
+        });
+
+        //判断相邻的两个值是否相等
+        clonedMap.forEach(function (row, ri) {
+          var tmp = null;
+          row.forEach(function (cell, ci) {
+            if (cell !== 0) {
+              if (cell === tmp) {
+                clonedMap[ri][ci - 1] = tmp * 2;
+                clonedMap[ri][ci] = 0;
+                tmp = null;
+              } else {
+                tmp = cell;
+              }
+            }
+          });
+        });
+
+        // 再次整理整个数组
+        clonedMap.forEach(function (row, ri) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < row.length; i++) {
+            if (row[i]) {
+              notEmpty.push(row[i]);
+            } else {
+              empty.push(row[i]);
+            }
+          }
+          clonedMap[ri] = notEmpty.concat(empty);
+        });
+
+        map = clonedMap;
+      }
+
+      //   向右
+      function moveRight() {
+        var clonedMap = window.structuredClone(map);
+        // 初次整理整个数组
+        clonedMap.forEach(function (row, ri) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < row.length; i++) {
+            if (row[i]) {
+              notEmpty.push(row[i]);
+            } else {
+              empty.push(row[i]);
+            }
+          }
+          clonedMap[ri] = empty.concat(notEmpty);
+        });
+
+        //判断相邻的两个值是否相等
+        clonedMap.forEach(function (row, ri) {
+          var tmp = null;
+          for (var i = 3; i >= 0; i--) {
+            if (clonedMap[ri][i] !== 0) {
+              if (clonedMap[ri][i] === tmp) {
+                clonedMap[ri][i + 1] = tmp * 2;
+                clonedMap[ri][i] = 0;
+              } else {
+                tmp = clonedMap[ri][i];
+              }
+            }
+          }
+        });
+
+        // 再次整理整个数组
+        clonedMap.forEach(function (row, ri) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < row.length; i++) {
+            if (row[i]) {
+              notEmpty.push(row[i]);
+            } else {
+              empty.push(row[i]);
+            }
+          }
+          clonedMap[ri] = empty.concat(notEmpty);
+        });
+
+        map = clonedMap;
+      }
+
+      //   向上
+      function moveUp() {
+        var clonedMap = window.structuredClone(map);
+        // 初次整理整个数组
+        for (var j = 0; j < 4; j++) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < 4; i++) {
+            if (clonedMap[i][j]) {
+              notEmpty.push(clonedMap[i][j]);
+            } else {
+              empty.push(clonedMap[i][j]);
+            }
+          }
+          var cols = notEmpty.concat(empty);
+          // 这个for循环的作用
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j] = cols[i];
+          }
+        }
+
+        //判断相邻的两个值是否相等
+        for (var j = 0; j < 4; j++) {
+          var tmp = null;
+          for (var i = 0; i < 4; i++) {
+            if (clonedMap[i][j] !== 0) {
+              if (clonedMap[i][j - 1] === 0) {
+                clonedMap[i][j - 1] = tmp * 2;
+                clonedMap[i][j] = 0;
+                tmp = null;
+              } else {
+                tmp = clonedMap[i][j];
+              }
+            }
+          }
+        }
+
+        // 再次整理整个数组
+        for (var j = 0; j < 4; j++) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < 4; i++) {
+            if (clonedMap[i][j]) {
+              notEmpty.push(clonedMap[i][j]);
+            } else {
+              empty.push(clonedMap[i][j]);
+            }
+          }
+          var cols = notEmpty.concat(empty);
+          // 这个for循环的作用
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j] = cols[i];
+          }
+        }
+
+        map = clonedMap;
+      }
+
+      //   向下
+      function moveDown() {
+        var clonedMap = window.structuredClone(map);
+        for (var j = 0; j < 4; j++) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j]
+              ? notEmpty.push(clonedMap[i][j])
+              : empty.push(clonedMap[i][j]);
+          }
+          var cols = empty.concat(notEmpty);
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j] = cols[i];
+          }
+        }
+        // 合并
+        for (var j = 0; j < 4; j++) {
+          var tmp = null;
+          for (var i = 3; i >= 0; i--) {
+            if (clonedMap[i][j] !== 0) {
+              if (clonedMap[i][j] === tmp) {
+                clonedMap[i + 1][j] = tmp * 2;
+                var combinDom = liDoms[(i + 1) * 4 + j];
+                combinDom.classList.add("combin");
+                setTimeout(function () {
+                  liDoms.forEach(function (dom) {
+                    dom.classList.remove("combin");
+                  });
+                }, 500);
+                // 当前cell改为0
+                clonedMap[i][j] = 0;
+                tmp = null;
+              } else {
+                tmp = clonedMap[i][j];
+              }
+            }
+          }
+        }
+
+        // // 整理
+        // // 遍历列
+        for (var j = 0; j < 4; j++) {
+          var empty = [];
+          var notEmpty = [];
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j]
+              ? notEmpty.push(clonedMap[i][j])
+              : empty.push(clonedMap[i][j]);
+          }
+          var cols = empty.concat(notEmpty);
+          for (var i = 0; i < 4; i++) {
+            clonedMap[i][j] = cols[i];
+          }
+        }
+        map = clonedMap;
+      }
+
+      // 键盘按下事件
+      document.body.onkeydown = function (event) {
+        console.log(event);
+        switch (event.key) {
+          case "w":
+          case "ArrowUp":
+            moveUp();
+            insert(randomNum(), randomPosition(map));
+            updateView();
+            break;
+          case "s":
+          case "ArrowDown":
+            moveDown();
+            insert(randomNum(), randomPosition(map));
+            updateView();
+            break;
+          case "a":
+          case "ArrowLeft":
+            moveLeft();
+            insert(randomNum(), randomPosition(map));
+            updateView();
+            break;
+          case "d":
+          case "ArrowRight":
+            moveRight();
+            insert(randomNum(), randomPosition(map));
+            updateView();
+            break;
+          default:
+            break;
+        }
+      };
+    </script>
+  </body>
+</html>

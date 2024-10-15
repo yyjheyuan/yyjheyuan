@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wrap {
+        width: 900px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      img {
+        display: block;
+      }
+      .main1 {
+        width: 300px;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .main1 .mirror1 {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        /* background-color: aqua; */
+        background-color: rgb(192, 192, 192);
+        /* border: 5px solid #fff; */
+        box-shadow: 0 0 0 5px #fff;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: none; */
+        opacity: 0;
+      }
+      .mirror1 img {
+        position: absolute;
+      }
+      .main2 {
+        width: 300px;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .main2 .mirror2 {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: rgb(192, 192, 192);
+        /* border: 5px solid #fff; */
+        box-shadow: 0 0 0 5px #fff;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: none; */
+        opacity: 0;
+      }
+      .mirror2 img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="main1">
+        <img src="./img/a1.png" width="100%" alt="" class="imgx1" />
+        <div class="mirror1">
+          <img src="./img/a1.png" alt="" />
+        </div>
+      </div>
+      <div class="main2">
+        <img src="./img/a2.png" width="100%" alt="" class="imgx2" />
+        <div class="mirror2">
+          <img src="./img/a2.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var mainDom = document.querySelector(".main1");
+    var mirrorDom = document.querySelector(".mirror1");
+    var mirrorImgDom = document.querySelector(".mirror1 img");
+    var mainDom2 = document.querySelector(".main2");
+    var mirrorDom2 = document.querySelector(".mirror2");
+    var mirrorImgDom2 = document.querySelector(".mirror2 img");
+    var imgDom1 = document.querySelector(".wrap .main1 .imgx1");
+    var imgDom2 = document.querySelector(".wrap .main2 .imgx2");
+    mainDom.onmousemove = function (event) {
+      var mouseX = event.pageX - mainDom.offsetLeft;
+      var mouseY = event.pageY - mainDom.offsetTop;
+
+      var mirrorX = mouseX - mirrorDom.offsetWidth / 2;
+      var mirrorY = mouseY - mirrorDom.offsetHeight / 2;
+
+      //   mirrorX = Math.max(-50, Math.min(mirrorX, mainDom.offsetWidth - 100));
+      //   mirrorY = Math.max(-50, Math.min(mirrorY, mainDom.offsetHeight - 100));
+
+      if (mirrorX <= -50) {
+        mirrorX = -50;
+      } else if (mirrorX >= mainDom.offsetWidth - mirrorDom.offsetWidth + 50) {
+        mirrorX = mainDom.offsetWidth - mirrorDom.offsetWidth + 50;
+      }
+      if (mirrorY <= -50) {
+        mirrorY = -50;
+      } else if (
+        mirrorY >=
+        mainDom.offsetHeight - mirrorDom.offsetHeight + 50
+      ) {
+        mirrorY = mainDom.offsetHeight - mirrorDom.offsetHeight + 50;
+      }
+      mirrorDom.style.left = mirrorX + "px";
+      mirrorDom.style.top = mirrorY + "px";
+
+      var bigimgLeft =
+        (mirrorImgDom.offsetWidth / mainDom.offsetWidth) * mouseX -
+        mirrorDom.offsetWidth / 2;
+      var bigimgTop =
+        (mirrorImgDom.offsetHeight / mainDom.offsetHeight) * mouseY -
+        mirrorDom.offsetHeight / 2;
+      /* if (bigimgLeft <= -50) {
+        bigimgLeft = -50;
+      } else if (
+        bigimgLeft >=
+        mainDom.offsetWidth*2.2 - mirrorDom.offsetWidth + 50
+      ) {
+        bigimgLeft = mainDom.offsetWidth*2.2 - mirrorDom.offsetWidth + 50;
+      }
+      if (bigimgTop <= -50) {
+        bigimgTop = -50;
+      } else if (
+        bigimgTop >=
+        mainDom.offsetHeight*2.2 - mirrorDom.offsetHeight + 50
+      ) {
+        bigimgTop = mainDom.offsetHeight*2.2 - mirrorDom.offsetHeight + 50;
+      } */
+
+      mirrorImgDom.style.left = -bigimgLeft + "px";
+      mirrorImgDom.style.top = -bigimgTop + "px";
+
+      mirrorDom.style.opacity = 1;
+
+      var mouse2X = (mouseX * mainDom2.offsetWidth) / mainDom.offsetWidth;
+      var mouse2Y = (mouseY * mainDom2.offsetHeight) / mainDom.offsetHeight;
+
+      var mirror2X = mouse2X - mirrorDom2.offsetWidth / 2;
+      var mirror2Y = mouse2Y - mirrorDom2.offsetHeight / 2;
+
+      if (mirror2X <= -50) {
+        mirror2X = -50;
+      } else if (
+        mirror2X >=
+        mainDom2.offsetWidth - mirrorDom2.offsetWidth + 50
+      ) {
+        mirror2X = mainDom2.offsetWidth - mirrorDom2.offsetWidth + 50;
+      }
+      if (mirror2Y <= -50) {
+        mirror2Y = -50;
+      } else if (
+        mirror2Y >=
+        mainDom2.offsetHeight - mirrorDom2.offsetHeight + 50
+      ) {
+        mirror2Y = mainDom2.offsetHeight - mirrorDom2.offsetHeight + 50;
+      }
+
+      mirrorDom2.style.left = mirror2X + "px";
+      mirrorDom2.style.top = mirror2Y + "px";
+
+      var bigimgLeft2 =
+        (mirrorImgDom2.offsetWidth / mainDom2.offsetWidth) * mouse2X -
+        mirrorDom2.offsetWidth / 2;
+      var bigimgTop2 =
+        (mirrorImgDom2.offsetHeight / mainDom2.offsetHeight) * mouse2Y -
+        mirrorDom2.offsetHeight / 2;
+
+      mirrorImgDom2.style.left = -bigimgLeft2 + "px";
+      mirrorImgDom2.style.top = -bigimgTop2 + "px";
+      mirrorDom2.style.opacity = 1;
+    };
+    mainDom.onmouseout = function (event) {
+      mirrorDom.style.opacity = 0;
+      mirrorDom2.style.opacity = 0;
+    };
+
+    mainDom2.onmousemove = function (event) {
+      var mouse2X = event.pageX - mainDom2.offsetLeft;
+      var mouse2Y = event.pageY - mainDom2.offsetTop;
+
+      var mirror2X = mouse2X - mirrorDom2.offsetWidth / 2;
+      var mirror2Y = mouse2Y - mirrorDom2.offsetHeight / 2;
+
+      //   mirrorX = Math.max(-50, Math.min(mirrorX, mainDom.offsetWidth - 100));
+      //   mirrorY = Math.max(-50, Math.min(mirrorY, mainDom.offsetHeight - 100));
+
+      if (mirror2X <= -50) {
+        mirror2X = -50;
+      } else if (
+        mirror2X >=
+        mainDom2.offsetWidth - mirrorDom2.offsetWidth + 50
+      ) {
+        mirror2X = mainDom2.offsetWidth - mirrorDom2.offsetWidth + 50;
+      }
+      if (mirror2Y <= -50) {
+        mirror2Y = -50;
+      } else if (
+        mirror2Y >=
+        mainDom2.offsetHeight - mirrorDom2.offsetHeight + 50
+      ) {
+        mirror2Y = mainDom2.offsetHeight - mirrorDom2.offsetHeight + 50;
+      }
+
+      mirrorDom2.style.left = mirror2X + "px";
+      mirrorDom2.style.top = mirror2Y + "px";
+
+      var bigimgLeft2 =
+        (mirrorImgDom2.offsetWidth / mainDom2.offsetWidth) * mouse2X -
+        mirrorDom2.offsetWidth / 2;
+      var bigimgTop2 =
+        (mirrorImgDom2.offsetHeight / mainDom2.offsetHeight) * mouse2Y -
+        mirrorDom2.offsetHeight / 2;
+
+      mirrorImgDom2.style.left = -bigimgLeft2 + "px";
+      mirrorImgDom2.style.top = -bigimgTop2 + "px";
+      // dadad
+      var mouseX = (mouse2X * mainDom.offsetWidth) / mainDom2.offsetWidth;
+      var mouseY = (mouse2Y * mainDom.offsetHeight) / mainDom2.offsetHeight;
+
+      var mirrorX = mouseX - mirrorDom.offsetWidth / 2;
+      var mirrorY = mouseY - mirrorDom.offsetHeight / 2;
+
+      if (mirrorX <= -50) {
+        mirrorX = -50;
+      } else if (mirrorX >= mainDom.offsetWidth - mirrorDom.offsetWidth + 50) {
+        mirrorX = mainDom.offsetWidth - mirrorDom.offsetWidth + 50;
+      }
+      if (mirrorY <= -50) {
+        mirrorY = -50;
+      } else if (
+        mirrorY >=
+        mainDom.offsetHeight - mirrorDom.offsetHeight + 50
+      ) {
+        mirrorY = mainDom.offsetHeight - mirrorDom.offsetHeight + 50;
+      }
+
+      mirrorDom.style.left = mirror2X + "px";
+      mirrorDom.style.top = mirror2Y + "px";
+
+      var bigimgLeft =
+        (mirrorImgDom.offsetWidth / mainDom.offsetWidth) * mouseX -
+        mirrorDom.offsetWidth / 2;
+      var bigimgTop =
+        (mirrorImgDom.offsetHeight / mainDom.offsetHeight) * mouseY -
+        mirrorDom.offsetHeight / 2;
+
+      mirrorImgDom.style.left = -bigimgLeft + "px";
+      mirrorImgDom.style.top = -bigimgTop + "px";
+      mirrorDom.style.opacity = 1;
+
+      mirrorDom2.style.opacity = 1;
+    };
+    mainDom2.onmouseout = function (event) {
+      mirrorDom2.style.opacity = 0;
+      mirrorDom.style.opacity = 0;
+    };
+  </script>
+</html>

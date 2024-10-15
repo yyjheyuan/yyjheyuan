@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .starg {
+        width: 400px;
+        height: 400px;
+        /* background-color: aquamarine; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-image: url(./k1.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .starg.o {
+        background-image: url(./k2.png);
+      }
+      .starg ul.prize {
+        width: 340px;
+        height: 340px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        /* background-color: cadetblue; */
+      }
+      .starg ul.prize li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url(./bg2.png);
+        /* background-position: 100% 100%; */
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .starg ul.prize li.goOn {
+        background-image: url(./bg1.png);
+      }
+      .starg ul.prize li img {
+        width: 60%;
+      }
+      .starg .goon {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        color: white;
+        z-index: 9;
+        background-image: url(./bg1.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+      }
+      .starg .goon h1 {
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="starg">
+      <div class="goon"></div>
+      <ul class="prize"></ul>
+    </div>
+    <script>
+      var stargDom = document.querySelector(".starg");
+      var ulDom = document.querySelector(".prize");
+      var goonDom = document.querySelector(".goon");
+      var litext = [
+        {
+          text: "谢谢参与",
+          icon: "./j1.png",
+          order: "1",
+        },
+        {
+          text: "美女一个",
+          icon: "./j2.png",
+          order: "2",
+        },
+        {
+          text: "宝马一辆",
+          icon: "./j1.png",
+          order: "3",
+        },
+        {
+          text: "单车一辆",
+          icon: "./j2.png",
+          order: "6",
+        },
+        {
+          text: "鸡蛋一蓝",
+          icon: "./j1.png",
+          order: "9",
+        },
+        {
+          text: "500红包",
+          icon: "./j2.png",
+          order: "8",
+        },
+        {
+          text: "靓号一个",
+          icon: "./j1.png",
+          order: "7",
+        },
+        {
+          text: "鲜花一蓝",
+          icon: "./j2.png",
+          order: "4",
+        },
+      ];
+      console.log(litext[0].icon);
+      //   创建ul内部的li标签，设置其样式，并添加到ul内部
+      var h1Dom = document.createElement("h1");
+      h1Dom.innerText = "抽奖";
+      var goonspanDom = document.createElement("span");
+      goonspanDom.innerText = "消耗10积分";
+      goonDom.appendChild(h1Dom);
+      goonDom.appendChild(goonspanDom);
+      litext.forEach(function (ele, index) {
+        var liDom = document.createElement("li");
+        var spanDom = document.createElement("span");
+        var iconDom = document.createElement("img");
+        iconDom.src = ele.icon;
+        spanDom.innerText = ele.text;
+        // iconDom.style.width = 100+"%"
+        liDom.style.width = 100 + "px";
+        liDom.style.height = 100 + "px";
+        // 每个奖品所在的位置
+        // 这个计算的方式还有疑惑（不知道怎么进行运算）
+        liDom.style.top =
+          Math.floor((ele.order - 1) / 3) * 100 +
+          (Math.floor((ele.order - 1) / 3) + 1) * 10 +
+          "px";
+        liDom.style.left =
+          ((ele.order - 1) % 3) * 100 + (((ele.order - 1) % 3) + 1) * 10 + "px";
+        // liDom.style.backgroundColor = "red";
+        liDom.appendChild(iconDom);
+        liDom.appendChild(spanDom);
+        console.log(Math.floor((ele.order - 1) / 3), (ele.order - 1) % 3);
+        // liDom.style.backgroundImage = litext[index].icon;
+        ulDom.appendChild(liDom);
+      });
+      var liDoms = document.querySelectorAll("ul.prize li");
+      console.log(liDoms);
+      //   声明一个变量接受定时器setInterval的id
+      var timer;
+      //  声明一个变量作为循环的起始的索引
+      var i = -1;
+      function Prize(ms, a) {
+        clearInterval(timer);
+        timer = setInterval(function () {
+          i++;
+          i = i > liDoms.length - 1 ? 0 : i;
+          if (i === a) {
+            clearInterval(timer);
+          }
+          liDoms.forEach(function (ele, index) {
+            if (index === i) {
+              ele.classList.add("goOn");
+            } else {
+              ele.classList.remove("goOn");
+            }
+          });
+        }, ms);
+      }
+      // Prize(200,5);
+      //   设置抽奖时转圈的速度以及最后的结果
+      function Start(a) {
+        Prize(200);
+        setTimeout(function () {
+          Prize(120);
+          setTimeout(function () {
+            Prize(70);
+            setTimeout(function () {
+              Prize(50);
+              setTimeout(function () {
+                Prize(100);
+                setTimeout(function () {
+                  Prize(300);
+                  setTimeout(function () {
+                    Prize(400, a);
+                  }, 2000);
+                }, 2000);
+              }, 2700);
+            }, 2400);
+          }, 2000);
+        }, 1000);
+      }
+      //   添加点击事件，调用Start函数，让整个抽奖页开始旋转起来
+      goonDom.onclick = function () {
+        Start(Math.floor(Math.random() * liDoms.length));
+      };
+      // 给背景添加/移除一个类名，以此来更换背景图以达到背景图中的灯在转动的样子。
+      setInterval(function () {
+        document.querySelector(".starg").classList.toggle("o");
+      }, 200);
+    </script>
+  </body>
+</html>

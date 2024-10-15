@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul.stage {
+        width: 300px;
+        height: 300px;
+        background-color: chartreuse;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      ul.stage li {
+        /* width: 100px;
+        height: 100px; */
+        border: 2px solid #fff;
+        box-sizing: border-box;
+        background-image: url(./man.jpg);
+        background-repeat: no-repeat;
+        position: absolute;
+        transition: all 0.4s;
+      }
+      ul.stage li.on {
+        border: 2px solid red;
+        transition: all 0.5s;
+      }
+      .btn {
+        width: 300px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="stage"></ul>
+    <div class="btn">
+      <button class="start">开始游戏</button>
+      <button class="difficulty">级别提升</button>
+    </div>
+  </body>
+  <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
+  <script>
+    var stageDom = document.querySelector(".stage");
+    var size = 3;
+
+    // 设置一个构造函数Game，传入图片固定的方位oOrder，让oOrder一开始与nOrder相等
+    function Game(oOrder) {
+      this.oOrder = oOrder;
+      this.nOrder = oOrder;
+    }
+    // 计算小方块的个数及他们的坐标
+    Game.prototype.calcCode = function (isNOrder) {
+      if (isNOrder) {
+        var row = Math.floor(this.nOrder / size); // 行
+        var cal = this.nOrder % size;
+      } else {
+        var row = Math.floor(this.oOrder / size);
+        var cal = this.oOrder % size;
+      }
+      return { row: row, cal: cal };
+    };
+    // 初始化，及点击事件
+    var clickone = null; //用于判断是否点击
+    Game.prototype.show = function () {
+      this.node = document.createElement("li");
+      this.node.style.width = stageDom.offsetWidth / size + "px";
+      this.node.style.height = stageDom.offsetHeight / size + "px";
+
+      // 计算小方块的位置
+      var calc = this.calcCode();
+      this.node.style.left = calc.cal * (stageDom.offsetWidth / size) + "px";
+      this.node.style.top = calc.row * (stageDom.offsetHeight / size) + "px";
+      // 各背景图的位置
+      this.node.style.backgroundPositionX =
+        calc.cal * -(stageDom.offsetWidth / size) + "px";
+      this.node.style.backgroundPositionY =
+        calc.row * -(stageDom.offsetHeight / size) + "px";
+      this.node.style.backgroundSize = stageDom.offsetWidth + "px";
+      stageDom.appendChild(this.node);
+
+      // 点击事件
+      var _this = this;
+      this.node.onclick = function () {
+        // this.classList.toggle("on");
+        // console.log(this, _this);
+
+        if (clickone) {
+          // 交换两次点击的图片的新坐标
+          var tmp = clickone.nOrder;
+          clickone.nOrder = _this.nOrder;
+          _this.nOrder = tmp;
+          // 执行update函数，改变两图片位置
+          clickone.updateCard();
+          _this.updateCard();
+
+          clickone.node.classList.remove("on");
+          clickone = null;
+          var isGameOver = cards.every(function (card) {
+            return card.oOrder === card.nOrder;
+          });
+          if (isGameOver) {
+            alert("恭喜你，你赢了！");
+          }
+        } else {
+          // 第一次点击将该点击的节点信息存储到clickone中
+          clickone = _this;
+          clickone.node.classList.add("on");
+        }
+      };
+    };
+    Game.prototype.updateCard = function () {
+      // 当isNOrder为true时，传入的新坐标的值
+      var calc = this.calcCode(true);
+      this.node.style.left = calc.cal * (stageDom.offsetWidth / size) + "px";
+      this.node.style.top = calc.row * (stageDom.offsetHeight / size) + "px";
+    };
+    // 生成一个随机数
+    function shuffle(arr) {
+      // 先用.slice深拷贝arr，再用sort进行随机排序当值为-时会打乱顺序
+      var randomArr = arr.slice().sort(function () {
+        return Math.random() - 0.5;
+      });
+      return randomArr;
+    }
+
+    // size*size是新生成的数组的长度，用undefined填充所有的项
+    var cards = new Array(size * size).fill(undefined).map(function (e, i) {
+      // console.log(new Game(i))
+      return new Game(i);
+    });
+    // console.log(cards);
+    var tmp = shuffle(
+      cards.map(function (card, index) {
+        return card.nOrder;
+      })
+    );
+    // console.log(tmp);
+    var shuffleCard = cards.map(function (item, index) {
+      item.nOrder = tmp[index];
+      return item;
+    });
+    cards.forEach(function (card) {
+      card.show();
+    });
+
+    document.querySelector(".start").onclick = function () {
+      $("ul li").remove();
+      shuffleCard.forEach(function (card) {
+        card.show();
+        card.updateCard();
+      });
+    };
+  </script>
+</html>
