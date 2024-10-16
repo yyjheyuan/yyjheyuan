@@ -6,6 +6,22 @@
     <title>Document</title>
     <script src="./js/animate.js"></script>
     <link rel="stylesheet" href="./css/snakes.css" />
+    <style>
+      .back{
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+      }
+      .backhome{
+        width: 50px;
+        height: 50px;
+        background-image: linear-gradient(45deg, #ff7e5f, #feb47b);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -13,6 +29,11 @@
       <button class="startBtn">开始游戏</button>
       <!-- 暂停按钮 -->
       <button class="pauseBtn">暂停</button>
+    </div>
+    <div class="back">
+      <div class="backhome">
+        <a href="../../index.html"><img src="../../image/backHome.svg" alt=""></a>
+      </div>
     </div>
     <script src="./js/config.js"></script>
     <script src="./js/snakes.js"></script>

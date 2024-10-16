@@ -65,6 +65,20 @@
         left: 0;
         z-index: 8;
       }
+      .back{
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+      }
+      .backhome{
+        width: 50px;
+        height: 50px;
+        background-image: linear-gradient(45deg, #ff7e5f, #feb47b);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
@@ -76,6 +90,11 @@
     <div class="slider">
       <input type="range" name="" id="" />
       <div class="slide"></div>
+    </div>
+    <div class="back">
+      <div class="backhome">
+        <a href="../../index.html"><img src="../../image/backHome.svg" alt=""></a>
+      </div>
     </div>
     <script>
       $(function () {
