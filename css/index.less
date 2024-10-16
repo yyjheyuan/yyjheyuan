@@ -21,12 +21,17 @@
     .avatarbgimg {
       width: 40rem;
       height: 40rem;
-      background-color: rgb(0, 255, 170);
+      background-color: #7ae2e8;
       border-radius: 50%;
-      background-image: url("../image/avatar.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-image: url("../image/avatar.jpg");
+      // background-size: cover;
+      // background-position: center;
+      // background-repeat: no-repeat;
+      // loading效果
     }
   }
   .info_main {
@@ -40,7 +45,7 @@
         padding-top: 5rem;
         i {
           margin-right: 2rem;
-          img{
+          img {
             width: 10rem;
             height: 10rem;
           }
@@ -113,7 +118,7 @@ main {
           .bgimg {
             width: 60rem;
             height: 40rem;
-            background-color: chocolate;
+            background-color: rgba(255, 184, 129, 0.762);
             transition: all 0.5s;
           }
         }
