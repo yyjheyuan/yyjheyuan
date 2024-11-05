@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
     <style>
       .stage {
         margin: 50px auto 0;
@@ -96,6 +95,7 @@
         <a href="../../index.html"><img src="../../image/backHome.svg" alt=""></a>
       </div>
     </div>
+    <script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.js"></script>
     <script>
       $(function () {
         var wth = $(".stage").width();
@@ -130,12 +130,11 @@
             // console.log(event);
             if (Math.abs($("input").val() - x) <= 3) {
               alert("验证成功");
+              location.reload();
               console.log(Math.abs($("input").val() - x));
             } else {
               console.log(Math.abs($("input").val() - x));
-              $(".thumb")
-                .add(".slide")
-                .animate({ left: wth - x - 30 + "px" });
+              $(".thumb").add(".slide").animate({ left: wth - x - 30 + "px" });
               $(".slider input").val(wth - x - 30);
             }
           });
