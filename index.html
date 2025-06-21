@@ -45,7 +45,7 @@
       </div>
       <div class="info_main">
         <div class="myname">
-          <h3>袁裕瑾</h3>
+          <h3>袁*瑾</h3>
           <p>前端开发工程师</p>
           <span>
             <i>
@@ -85,10 +85,10 @@
         <div class="content">
           <div class="rowmain">
             <p><span>性别</span><span class="maintext">男</span></p>
-            <p><span>年龄</span><span class="maintext">21岁</span></p>
-            <p><span>学校</span><span class="maintext">广州商学院</span></p>
+            <p><span>年龄</span><span class="maintext" id="ageTime">--岁</span></p>
+<!--             <p><span>学校</span><span class="maintext">广州商学院</span></p> -->
             <p>
-              <span>邮箱</span><span class="maintext">yyj020623@163.com</span>
+              <span>邮箱</span><span class="maintext">y*j******@163.com</span>
             </p>
             <p>
               <!-- <span>联系方式</span><span class="maintext">191*****496</span> -->
@@ -320,6 +320,12 @@
           },
         ],
       });
+      let ageTime = document.querySelector("#ageTime");
+      let dateTime = new Date()
+      let nowYear = dateTime.getFullYear();
+      let birthYear = 2002
+      let myAge = nowYear - birthYear
+      ageTime.innerText = myAge + "岁"
     };
   </script>
 </html>
